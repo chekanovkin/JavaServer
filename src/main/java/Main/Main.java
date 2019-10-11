@@ -10,6 +10,7 @@ import org.apache.catalina.webresources.StandardRoot;
 
 public class Main {
 
+//TODO@ Проверка загрузки
     public static void main(String[] args) throws Exception{
         String webappDirLocation = "src/main/webapp/";
         Tomcat tomcat = new Tomcat();
