@@ -10,6 +10,7 @@ public class TeachersDataSet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false, insertable = true, updatable = true)
     private int id;
 
     @Column(name = "name", nullable = false, length = 35)
@@ -33,16 +34,28 @@ public class TeachersDataSet {
     @OneToMany(mappedBy = "teacher_id", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<TestsDataSet> createdTests;
 
-    @Column(name = "organization")
+    @OneToMany(mappedBy = "teacher_id", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<GroupsDataSet> groups;
+
+    @Column(name = "organization", length = 50)
     private String organization;
 
     public TeachersDataSet(){
     }
 
-    public TeachersDataSet(String name, String surname, String patronymic, String email, String password, String regDate) {
+    public TeachersDataSet(String name, String surname, String patronymic, String email, String password, String regDate,  String organization) {
         this.name = name;
         this.surname = surname;
         this.patronymic = patronymic;
+        this.email = email;
+        this.password = password;
+        this.regDate = regDate;
+        this.organization = organization;
+    }
+
+    public TeachersDataSet(String name, String surname, String email, String password, String regDate) {
+        this.name = name;
+        this.surname = surname;
         this.email = email;
         this.password = password;
         this.regDate = regDate;
@@ -118,6 +131,14 @@ public class TeachersDataSet {
 
     public void setOrganization(String organization) {
         this.organization = organization;
+    }
+
+    public List<GroupsDataSet> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(List<GroupsDataSet> groups) {
+        this.groups = groups;
     }
 
     @Override

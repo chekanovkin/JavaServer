@@ -9,6 +9,7 @@ public class StudentsDataSet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false, insertable = true, updatable = true)
     private int id;
 
     @Column(name = "name", nullable = false, length = 35)
@@ -29,21 +30,41 @@ public class StudentsDataSet {
     @Column(name = "regdate")
     private String regDate;
 
-    @Column(name = "passedtests")
-    private List<String> passedTests;
+    @Column(name = "organization", length = 50)
+    private String organization;
+
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<MarksDataSet> marks;
+
+    @OneToOne(mappedBy = "student")
+    private AnswersDataSet answer;
+
+    @ManyToMany
+    @JoinTable(name = "test_student", joinColumns = @JoinColumn(name = "student_id"),
+            inverseJoinColumns = @JoinColumn(name = "test_id"))
+    private List<TestsDataSet> passedTests;
 
     @ManyToMany
     @JoinTable(name = "students_groups", joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "group_id"))
-    private List<Integer> groupIds;
+    private List<GroupsDataSet> groups;
 
     public StudentsDataSet(){
     }
 
-    public StudentsDataSet(String name, String surname, String patronymic, String email, String password, String regDate) {
+    public StudentsDataSet(String name, String surname, String patronymic, String email, String password, String regDate, String organization) {
         this.name = name;
         this.surname = surname;
         this.patronymic = patronymic;
+        this.email = email;
+        this.password = password;
+        this.regDate = regDate;
+        this.organization = organization;
+    }
+
+    public StudentsDataSet(String name, String surname, String email, String password, String regDate) {
+        this.name = name;
+        this.surname = surname;
         this.email = email;
         this.password = password;
         this.regDate = regDate;
@@ -105,20 +126,44 @@ public class StudentsDataSet {
         this.regDate = regDate;
     }
 
-    public List<String> getPassedTests() {
+    public List<GroupsDataSet> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(List<GroupsDataSet> groups) {
+        this.groups = groups;
+    }
+
+    public String getOrganization() {
+        return organization;
+    }
+
+    public void setOrganization(String organization) {
+        this.organization = organization;
+    }
+
+    public List<MarksDataSet> getMarks() {
+        return marks;
+    }
+
+    public void setMarks(List<MarksDataSet> marks) {
+        this.marks = marks;
+    }
+
+    public AnswersDataSet getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(AnswersDataSet answer) {
+        this.answer = answer;
+    }
+
+    public List<TestsDataSet> getPassedTests() {
         return passedTests;
     }
 
-    public void setPassedTests(List<String> passedTests) {
+    public void setPassedTests(List<TestsDataSet> passedTests) {
         this.passedTests = passedTests;
-    }
-
-    public List<Integer> getGroupIds() {
-        return groupIds;
-    }
-
-    public void setGroupIds(List<Integer> groupIds) {
-        this.groupIds = groupIds;
     }
 
     @Override

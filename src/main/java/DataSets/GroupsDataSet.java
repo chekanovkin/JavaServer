@@ -9,24 +9,31 @@ public class GroupsDataSet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false, insertable = true, updatable = true)
     private int id;
+
+    @Column(name = "name", nullable = false, length = 35)
+    private String name;
 
     @ManyToMany
     @JoinTable(name = "student_group", joinColumns = @JoinColumn(name = "group_id"),
             inverseJoinColumns = @JoinColumn(name = "student_id"))
-    private List<Integer> studentIds;
+    private List<StudentsDataSet> student;
 
     @ManyToMany
     @JoinTable(name = "test_group", joinColumns = @JoinColumn(name = "group_id"),
             inverseJoinColumns = @JoinColumn(name = "test_id"))
-    private List<Integer> testIds;
+    private List<TestsDataSet> test;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "teacher_id")
+    private TeachersDataSet teacher;
 
     public GroupsDataSet() {
     }
 
-    public GroupsDataSet(List<Integer> studentIds, List<Integer> testIds) {
-        this.studentIds = studentIds;
-        this.testIds = testIds;
+    public GroupsDataSet(String name) {
+        this.name = name;
     }
 
     public int getId() {
@@ -37,19 +44,27 @@ public class GroupsDataSet {
         this.id = id;
     }
 
-    public List<Integer> getStudentIds() {
-        return studentIds;
+    public String getName() {
+        return name;
     }
 
-    public void setStudentIds(List<Integer> studentIds) {
-        this.studentIds = studentIds;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public List<Integer> getTestIds() {
-        return testIds;
+    public List<StudentsDataSet> getStudent() {
+        return student;
     }
 
-    public void setTestIds(List<Integer> testIds) {
-        this.testIds = testIds;
+    public void setStudent(List<StudentsDataSet> student) {
+        this.student = student;
+    }
+
+    public List<TestsDataSet> getTest() {
+        return test;
+    }
+
+    public void setTest(List<TestsDataSet> test) {
+        this.test = test;
     }
 }
