@@ -20,7 +20,7 @@ public class TestsDataSet {
     private int solution_time;                                          //пока пусть будет в минутах
 
     @Column(name = "creation_time", nullable = false)
-    private Date creation_time;
+    private String creation_time;
 
     @Column(name = "test_type", nullable = false, length = 50)
     private boolean test_type;                                           // может и не boolean (открытый и закрытый)
@@ -57,7 +57,7 @@ public class TestsDataSet {
     public TestsDataSet(){
     }
 
-    public TestsDataSet(String name, int solution_time, Date creation_time, boolean test_type, int attempts, String about_test) {
+    public TestsDataSet(String name, int solution_time, String creation_time, boolean test_type, int attempts, String about_test) {
         this.name = name;
         this.solution_time = solution_time;
         this.creation_time = creation_time;
@@ -66,7 +66,7 @@ public class TestsDataSet {
         this.about_test = about_test;
     }
 
-    public TestsDataSet(String name, Date creation_time, boolean test_type) {
+    public TestsDataSet(String name, String creation_time, boolean test_type) {
         this.name = name;
         this.creation_time = creation_time;
         this.test_type = test_type;
@@ -96,11 +96,11 @@ public class TestsDataSet {
         this.solution_time = solution_time;
     }
 
-    public Date getCreation_time() {
+    public String getCreation_time() {
         return creation_time;
     }
 
-    public void setCreation_time(Date creation_time) {
+    public void setCreation_time(String creation_time) {
         this.creation_time = creation_time;
     }
 

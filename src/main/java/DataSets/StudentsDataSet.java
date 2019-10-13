@@ -21,10 +21,10 @@ public class StudentsDataSet {
     @Column(name = "patronymic")
     private String patronymic;
 
-    @Column(name = "email", unique = true, nullable = false, length = 50)
+    @Column(name = "email", updatable = false, unique = true, nullable = false, length = 50)
     private String email;
 
-    @Column(name = "password", unique = true, nullable = false, length = 50)
+    @Column(name = "password", nullable = false, length = 50)
     private String password;
 
     @Column(name = "regdate")
