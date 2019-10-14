@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0bb64434-99e9-410e-86c7-e41418c63100" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Services/UserService_Interface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/AnswersDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataSets/AnswersDataSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/GroupsDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataSets/GroupsDataSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/MarksDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataSets/MarksDataSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/QuestionsDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataSets/QuestionsDataSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/StudentsDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataSets/StudentsDataSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/TeachersDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataSets/TeachersDataSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/TestsDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataSets/TestsDataSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/TeacherService.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Valera_54" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1S6ieWQeS7Vm0SFkpWt7CEG6D5R" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../server" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="file.status.colors" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main.Main" />
+      <module name="mainrep2.0" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Дмитрий\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0bb64434-99e9-410e-86c7-e41418c63100" name="Default Changelist" comment="" />
+      <created>1570032363854</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1570032363854</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Тестовое подключение к локалхосту">
+      <created>1570035373394</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1570035373394</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Тестовое подключение к локалхосту">
+      <created>1570119504765</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1570119504765</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Тестовое подключение к локалхосту">
+      <created>1570792022064</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1570792022064</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Тестовое подключение к локалхосту">
+      <created>1570792696500</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1570792696500</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Добавлен сервис к &quot;студенту&quot;">
+      <created>1570984556884</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1570984556884</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="Тестовое подключение к локалхосту" />
+    <MESSAGE value="Добавлен сервис к &quot;студенту&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен сервис к &quot;студенту&quot;" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+</project>

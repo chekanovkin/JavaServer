@@ -1,0 +1,10 @@
+{
+    "name": "multant/studtest",
+    "description": "service",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "barryvdh/laravel-ide-helper": "^2.6"
+    },
+    "license": "WTFlicense",
+    "minimum-stability": "stable"
+}

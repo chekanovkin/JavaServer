@@ -1,26 +1,178 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bb64434-99e9-410e-86c7-e41418c63100" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Services/UserService_Interface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0bb64434-99e9-410e-86c7-e41418c63100" name="Default Changelist" comment="Неизвестная ошибка класса Application\Foundation Laravel, но создан проект по-умолчанию, какая-то ошибка PHPstorm. Потерян доступ к проекту с сервера, поэтому пока не могу исправить.">
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/.idea/mainrep2.0.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DAO/AnswersDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DAO/GroupsDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DAO/MarksDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DAO/QuestionsDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DAO/StudentsDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DAO/TeachersDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DAO/TestsDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/AnswersDataSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/GroupsDataSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/MarksDataSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/QuestionsDataSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/StudentsDataSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/TeachersDataSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/TestsDataSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/Main/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/Services/StudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/Services/TeacherService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/Services/UserService_Interface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/TestServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/AnswersDataSet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/TestsDataSet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/Main/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/Servlets/TestServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/index_jsp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/index_jsp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/.idea/studtest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/.styleci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Console/Kernel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Exceptions/Handler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Http/Controllers/Auth/ConfirmPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Http/Controllers/Auth/VerificationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Http/Kernel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Http/Middleware/CheckForMaintenanceMode.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Http/Middleware/EncryptCookies.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Http/Middleware/TrimStrings.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Http/Middleware/TrustProxies.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Providers/BroadcastServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/app/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/artisan" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/bootstrap/app.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/bootstrap/cache/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/composer.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/config/app.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/config/auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/config/broadcasting.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/config/cache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/config/database.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/config/filesystems.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/config/hashing.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/config/logging.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/config/mail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/config/queue.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/config/services.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/config/session.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/config/view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/database/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/database/factories/UserFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/public/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/public/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/public/web.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/resources/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/resources/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/resources/lang/en/auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/resources/lang/en/pagination.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/resources/lang/en/passwords.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/resources/lang/en/validation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/resources/sass/app.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/resources/views/welcome.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/routes/api.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/routes/channels.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/routes/console.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/routes/web.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/server.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/storage/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/storage/app/public/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/storage/framework/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/storage/framework/cache/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/storage/framework/cache/data/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/storage/framework/sessions/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/storage/framework/testing/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/storage/framework/views/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/storage/logs/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/tests/CreatesApplication.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/tests/Feature/ExampleTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/tests/TestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/tests/Unit/ExampleTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/phpserver/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mainrep2.0.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/AnswersDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataSets/AnswersDataSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/GroupsDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataSets/GroupsDataSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/MarksDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataSets/MarksDataSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/QuestionsDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataSets/QuestionsDataSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/StudentsDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataSets/StudentsDataSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/TeachersDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataSets/TeachersDataSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/TestsDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataSets/TestsDataSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/TeacherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/AnswersDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/GroupsDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/MarksDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/QuestionsDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/StudentsDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/TeachersDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/TestsDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/AnswersDataSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/GroupsDataSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/MarksDataSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/QuestionsDataSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/StudentsDataSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/TeachersDataSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/TestsDataSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/StudentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/TeacherService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Services/UserService_Interface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/TestServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DataSets/AnswersDataSet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DataSets/TestsDataSet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/TestServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/index_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/index_jsp.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -52,7 +204,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../server" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -85,11 +237,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\Дмитрий\AppData\Roaming\Subversion</configuration>
@@ -101,6 +248,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1570032363854</updated>
+      <workItem from="1571096416964" duration="290000" />
     </task>
     <task id="LOCAL-00001" summary="Тестовое подключение к локалхосту">
       <created>1570035373394</created>
@@ -140,6 +288,9 @@
     <option name="localTasksCounter" value="6" />
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -174,7 +325,8 @@
     </ignored-roots>
     <MESSAGE value="Тестовое подключение к локалхосту" />
     <MESSAGE value="Добавлен сервис к &quot;студенту&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлен сервис к &quot;студенту&quot;" />
+    <MESSAGE value="Неизвестная ошибка класса Application\Foundation Laravel, но создан проект по-умолчанию, какая-то ошибка PHPstorm. Потерян доступ к проекту с сервера, поэтому пока не могу исправить." />
+    <option name="LAST_COMMIT_MESSAGE" value="Неизвестная ошибка класса Application\Foundation Laravel, но создан проект по-умолчанию, какая-то ошибка PHPstorm. Потерян доступ к проекту с сервера, поэтому пока не могу исправить." />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
