@@ -13,7 +13,7 @@ import org.hibernate.service.ServiceRegistry;
 
 import java.util.List;
 
-public class StudentService {
+public class StudentService implements UserService_Interface{
 
     private final SessionFactory sessionFactory;
     private static final String hibernate_show_sql = "true";
@@ -24,7 +24,7 @@ public class StudentService {
         sessionFactory = createSessionFactory(configuration);
     }
 
-    private Configuration getPostgreConfiguration() {
+    public Configuration getPostgreConfiguration() {
         Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(TeachersDataSet.class);
 
@@ -46,7 +46,7 @@ public class StudentService {
         return configuration.buildSessionFactory(serviceRegistry);
     }
 
-    public long addStudent(String name, String surname, String email, String password, String regDate) throws Exception {
+    public long addUser(String name, String surname, String email, String password, String regDate) throws Exception {
         try {
             Session session = sessionFactory.openSession();
             Transaction transaction = session.beginTransaction();
@@ -60,7 +60,7 @@ public class StudentService {
         }
     }
 
-    public StudentsDataSet getCurStudentByLogin(String login) throws Exception{
+    public StudentsDataSet getCurUserByLogin(String login) throws Exception{
         try {
             Session session = sessionFactory.openSession();
             StudentsDAO dao = new StudentsDAO(session);
@@ -72,7 +72,7 @@ public class StudentService {
         }
     }
 
-    public List<StudentsDataSet> getCurStudentByFIO(String name, String surname, String patronymic) throws Exception{
+    public List<StudentsDataSet> getCurUserByFIO(String name, String surname, String patronymic) throws Exception{
         try {
             Session session = sessionFactory.openSession();
             StudentsDAO dao = new StudentsDAO(session);

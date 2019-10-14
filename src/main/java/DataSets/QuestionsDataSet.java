@@ -23,10 +23,10 @@ public class QuestionsDataSet {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "test_id")
-    private TestsDataSet test;
+    private int test_id;
 
     @OneToMany(mappedBy = "questions", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<AnswersDataSet> answers;
+    private int answers_id;
 
     public QuestionsDataSet(){}
 
@@ -73,19 +73,19 @@ public class QuestionsDataSet {
         this.smth_object = smth_object;
     }
 
-    public TestsDataSet getTest() {
-        return test;
+    public int getTest_id() {
+        return test_id;
     }
 
-    public void setTest(TestsDataSet test) {
-        this.test = test;
+    public void setTest_id(int test_id) {
+        this.test_id = test_id;
     }
 
-    public List<AnswersDataSet> getAnswers() {
-        return answers;
+    public int getAnswers_id() {
+        return answers_id;
     }
 
-    public void setAnswers(List<AnswersDataSet> answers) {
-        this.answers = answers;
+    public void setAnswers_id(int answers_id) {
+        this.answers_id = answers_id;
     }
 }

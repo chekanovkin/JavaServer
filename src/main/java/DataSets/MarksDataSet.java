@@ -14,11 +14,12 @@ public class MarksDataSet {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "test_id")
-    private TestsDataSet test;
+    private int test_id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "student_id")
-    private StudentsDataSet student;
+    @ManyToMany
+    @JoinTable(name = "mark_student", joinColumns = @JoinColumn(name = "mark_id"),
+            inverseJoinColumns = @JoinColumn(name = "student_id"))
+    private int student_id;
 
     @Column(name = "mark")
     private int mark;
@@ -29,27 +30,35 @@ public class MarksDataSet {
         this.mark = mark;
     }
 
-    public TestsDataSet getTest() {
-        return test;
-    }
-
-    public void setTest(TestsDataSet test) {
-        this.test = test;
-    }
-
-    public StudentsDataSet getStudent() {
-        return student;
-    }
-
-    public void setStudent(StudentsDataSet student) {
-        this.student = student;
-    }
-
     public int getMark() {
         return mark;
     }
 
     public void setMark(int mark) {
         this.mark = mark;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getTest_id() {
+        return test_id;
+    }
+
+    public void setTest_id(int test_id) {
+        this.test_id = test_id;
+    }
+
+    public int getStudent_id() {
+        return student_id;
+    }
+
+    public void setStudent_id(int student_id) {
+        this.student_id = student_id;
     }
 }

@@ -32,10 +32,7 @@ public class TeachersDataSet {
     private String regDate;
 
     @OneToMany(mappedBy = "teacher_id", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<TestsDataSet> createdTests;
-
-    @OneToMany(mappedBy = "teacher_id", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<GroupsDataSet> groups;
+    private int groups_id;
 
     @Column(name = "organization", length = 50)
     private String organization;
@@ -117,14 +114,6 @@ public class TeachersDataSet {
         this.regDate = regDate;
     }
 
-    public List<TestsDataSet> getCreatedTests() {
-        return createdTests;
-    }
-
-    public void setCreatedTests(List<TestsDataSet> createdTests) {
-        this.createdTests = createdTests;
-    }
-
     public String getOrganization() {
         return organization;
     }
@@ -133,19 +122,19 @@ public class TeachersDataSet {
         this.organization = organization;
     }
 
-    public List<GroupsDataSet> getGroups() {
-        return groups;
-    }
-
-    public void setGroups(List<GroupsDataSet> groups) {
-        this.groups = groups;
-    }
-
     @Override
     public String toString() {
         return "TeachersDataSet{" +
                 "id=" + id +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    public int getGroups_id() {
+        return groups_id;
+    }
+
+    public void setGroups_id(int groups_id) {
+        this.groups_id = groups_id;
     }
 }

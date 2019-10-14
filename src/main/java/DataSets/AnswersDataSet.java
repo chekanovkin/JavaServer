@@ -22,14 +22,14 @@ public class AnswersDataSet {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "test_id")
-    private TestsDataSet test;
+    private int test_id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "question_id")
-    private TestsDataSet question;
+    private int question_id;
 
     @OneToOne(mappedBy = "answers")
-    private StudentsDataSet student;
+    private int student_id;
 
     public AnswersDataSet() {
     }
@@ -77,27 +77,27 @@ public class AnswersDataSet {
         this.right = right;
     }
 
-    public TestsDataSet getTest() {
-        return test;
+    public int getTest_id() {
+        return test_id;
     }
 
-    public void setTest(TestsDataSet test) {
-        this.test = test;
+    public void setTest_id(int test_id) {
+        this.test_id = test_id;
     }
 
-    public TestsDataSet getQuestion() {
-        return question;
+    public int getQuestion_id() {
+        return question_id;
     }
 
-    public void setQuestion(TestsDataSet question) {
-        this.question = question;
+    public void setQuestion_id(int question_id) {
+        this.question_id = question_id;
     }
 
-    public StudentsDataSet getStudent() {
-        return student;
+    public int getStudent_id() {
+        return student_id;
     }
 
-    public void setStudent(StudentsDataSet student) {
-        this.student = student;
+    public void setStudent_id(int student_id) {
+        this.student_id = student_id;
     }
 }

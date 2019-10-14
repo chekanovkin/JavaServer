@@ -12,7 +12,7 @@ import org.hibernate.service.ServiceRegistry;
 
 import java.util.List;
 
-public class TeacherService {
+public class TeacherService implements UserService_Interface{
 
     private final SessionFactory sessionFactory;
     private static final String hibernate_show_sql = "true";
@@ -23,7 +23,7 @@ public class TeacherService {
         sessionFactory = createSessionFactory(configuration);
     }
 
-    private Configuration getPostgreConfiguration() {
+    public Configuration getPostgreConfiguration() {
         Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(TeachersDataSet.class);
 
@@ -45,7 +45,7 @@ public class TeacherService {
         return configuration.buildSessionFactory(serviceRegistry);
     }
 
-    public long addTeacher(String name, String surname, String email, String password, String regDate) throws Exception {
+    public long addUser(String name, String surname, String email, String password, String regDate) throws Exception {
         try {
             Session session = sessionFactory.openSession();
             Transaction transaction = session.beginTransaction();
@@ -59,7 +59,7 @@ public class TeacherService {
         }
     }
 
-    public TeachersDataSet getCurTeacherByLogin(String login) throws Exception{
+    public TeachersDataSet getCurUserByLogin(String login) throws Exception{
         try {
             Session session = sessionFactory.openSession();
             TeachersDAO dao = new TeachersDAO(session);
@@ -71,7 +71,7 @@ public class TeacherService {
         }
     }
 
-    public List<TeachersDataSet> getCurTeacherByFIO(String name, String surname, String patronymic) throws Exception{
+    public List<TeachersDataSet> getCurUserByFIO(String name, String surname, String patronymic) throws Exception{
         try {
             Session session = sessionFactory.openSession();
             TeachersDAO dao = new TeachersDAO(session);

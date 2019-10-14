@@ -33,21 +33,23 @@ public class StudentsDataSet {
     @Column(name = "organization", length = 50)
     private String organization;
 
-    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<MarksDataSet> marks;
+    @ManyToMany
+    @JoinTable(name = "mark_student", joinColumns = @JoinColumn(name = "student_id"),
+            inverseJoinColumns = @JoinColumn(name = "mark_id"))
+    private int mark_id;
 
     @OneToOne(mappedBy = "student")
-    private AnswersDataSet answer;
+    private int answer_id;
 
     @ManyToMany
     @JoinTable(name = "test_student", joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "test_id"))
-    private List<TestsDataSet> passedTests;
+    private int passedTests_id;
 
     @ManyToMany
     @JoinTable(name = "students_groups", joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "group_id"))
-    private List<GroupsDataSet> groups;
+    private int groups_id;
 
     public StudentsDataSet(){
     }
@@ -126,14 +128,6 @@ public class StudentsDataSet {
         this.regDate = regDate;
     }
 
-    public List<GroupsDataSet> getGroups() {
-        return groups;
-    }
-
-    public void setGroups(List<GroupsDataSet> groups) {
-        this.groups = groups;
-    }
-
     public String getOrganization() {
         return organization;
     }
@@ -142,35 +136,43 @@ public class StudentsDataSet {
         this.organization = organization;
     }
 
-    public List<MarksDataSet> getMarks() {
-        return marks;
-    }
-
-    public void setMarks(List<MarksDataSet> marks) {
-        this.marks = marks;
-    }
-
-    public AnswersDataSet getAnswer() {
-        return answer;
-    }
-
-    public void setAnswer(AnswersDataSet answer) {
-        this.answer = answer;
-    }
-
-    public List<TestsDataSet> getPassedTests() {
-        return passedTests;
-    }
-
-    public void setPassedTests(List<TestsDataSet> passedTests) {
-        this.passedTests = passedTests;
-    }
-
     @Override
     public String toString() {
         return "StudentsDataSet{" +
                 "id=" + id +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    public int getPassedTests_id() {
+        return passedTests_id;
+    }
+
+    public void setPassedTests_id(int passedTests_id) {
+        this.passedTests_id = passedTests_id;
+    }
+
+    public int getGroups_id() {
+        return groups_id;
+    }
+
+    public void setGroups_id(int groups_id) {
+        this.groups_id = groups_id;
+    }
+
+    public int getMark_id() {
+        return mark_id;
+    }
+
+    public void setMark_id(int mark_id) {
+        this.mark_id = mark_id;
+    }
+
+    public int getAnswer_id() {
+        return answer_id;
+    }
+
+    public void setAnswer_id(int answer_id) {
+        this.answer_id = answer_id;
     }
 }

@@ -32,27 +32,27 @@ public class TestsDataSet {
     private String about_test;
 
     @OneToMany(mappedBy = "test", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<MarksDataSet> marks;
+    private int marks_id;
 
     @OneToMany(mappedBy = "test", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<QuestionsDataSet> questions;
+    private int questions_id;
 
     @ManyToMany
     @JoinTable(name = "test_student", joinColumns = @JoinColumn(name = "test_id"),
             inverseJoinColumns = @JoinColumn(name = "student_id"))
-    private List<StudentsDataSet> students;
+    private int student_id;
 
     @OneToMany(mappedBy = "test", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<AnswersDataSet> answers;
+    private int answers_id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "teacher_id")
-    private TeachersDataSet teacher;
+    private int teacher_id;
 
     @ManyToMany
     @JoinTable(name = "test_group", joinColumns = @JoinColumn(name = "test_id"),
             inverseJoinColumns = @JoinColumn(name = "group_id"))
-    private List<Integer> groupIds;
+    private int group_id;
 
     public TestsDataSet(){
     }
@@ -128,59 +128,59 @@ public class TestsDataSet {
         return about_test;
     }
 
-    public List<Integer> getGroupIds() {
-        return groupIds;
-    }
-
-    public void setGroupIds(List<Integer> groupIds) {
-        this.groupIds = groupIds;
-    }
-
-    public List<StudentsDataSet> getStudents() {
-        return students;
-    }
-
-    public void setStudents(List<StudentsDataSet> students) {
-        this.students = students;
-    }
-
-    public TeachersDataSet getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(TeachersDataSet teacher) {
-        this.teacher = teacher;
-    }
-
-    public List<AnswersDataSet> getAnswers() {
-        return answers;
-    }
-
-    public void setAnswers(List<AnswersDataSet> answers) {
-        this.answers = answers;
-    }
-
-    public List<QuestionsDataSet> getQuestions() {
-        return questions;
-    }
-
-    public void setQuestions(List<QuestionsDataSet> questions) {
-        this.questions = questions;
-    }
-
-    public List<MarksDataSet> getMarks() {
-        return marks;
-    }
-
-    public void setMarks(List<MarksDataSet> marks) {
-        this.marks = marks;
-    }
-
     @Override
     public String toString() {
         return "TestsDataSet{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    public int getMarks_id() {
+        return marks_id;
+    }
+
+    public void setMarks_id(int marks_id) {
+        this.marks_id = marks_id;
+    }
+
+    public int getQuestions_id() {
+        return questions_id;
+    }
+
+    public void setQuestions_id(int questions_id) {
+        this.questions_id = questions_id;
+    }
+
+    public int getGroup_id() {
+        return group_id;
+    }
+
+    public void setGroup_id(int group_id) {
+        this.group_id = group_id;
+    }
+
+    public int getTeacher_id() {
+        return teacher_id;
+    }
+
+    public void setTeacher_id(int teacher_id) {
+        this.teacher_id = teacher_id;
+    }
+
+    public int getAnswers_id() {
+        return answers_id;
+    }
+
+    public void setAnswers_id(int answers_id) {
+        this.answers_id = answers_id;
+    }
+
+    public int getStudent_id() {
+        return student_id;
+    }
+
+    public void setStudent_id(int student_id) {
+        this.student_id = student_id;
     }
 }

@@ -18,16 +18,16 @@ public class GroupsDataSet {
     @ManyToMany
     @JoinTable(name = "student_group", joinColumns = @JoinColumn(name = "group_id"),
             inverseJoinColumns = @JoinColumn(name = "student_id"))
-    private List<StudentsDataSet> student;
+    private int student_id;
 
     @ManyToMany
     @JoinTable(name = "test_group", joinColumns = @JoinColumn(name = "group_id"),
             inverseJoinColumns = @JoinColumn(name = "test_id"))
-    private List<TestsDataSet> test;
+    private int test_id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "teacher_id")
-    private TeachersDataSet teacher;
+    private int teacher_id;
 
     public GroupsDataSet() {
     }
@@ -52,19 +52,27 @@ public class GroupsDataSet {
         this.name = name;
     }
 
-    public List<StudentsDataSet> getStudent() {
-        return student;
+    public int getStudent_id() {
+        return student_id;
     }
 
-    public void setStudent(List<StudentsDataSet> student) {
-        this.student = student;
+    public void setStudent_id(int student_id) {
+        this.student_id = student_id;
     }
 
-    public List<TestsDataSet> getTest() {
-        return test;
+    public int getTest_id() {
+        return test_id;
     }
 
-    public void setTest(List<TestsDataSet> test) {
-        this.test = test;
+    public void setTest_id(int test_id) {
+        this.test_id = test_id;
+    }
+
+    public int getTeacher_id() {
+        return teacher_id;
+    }
+
+    public void setTeacher_id(int teacher_id) {
+        this.teacher_id = teacher_id;
     }
 }
