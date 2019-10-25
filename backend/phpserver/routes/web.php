@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/registration', function () {
+    return File::get(public_path() . '/studtest/registration.html');
+});
+
+//Route::get('/home', 'HomeController@index');
