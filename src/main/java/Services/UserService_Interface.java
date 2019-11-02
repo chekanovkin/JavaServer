@@ -18,7 +18,7 @@ public interface UserService_Interface {
         return configuration.buildSessionFactory(serviceRegistry);
     }
 
-    long addUser(String name, String surname, String email, String password, String regDate) throws Exception;
+    void addUser(String name, String surname, String email, String password, String regDate) throws Exception;
 
     <T> T getCurUserByLogin(String login) throws Exception;
 

@@ -4,7 +4,6 @@ import DataSets.StudentsDataSet;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
-
 import javax.persistence.NoResultException;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -33,7 +32,7 @@ public class StudentsDAO {
         StudentsDataSet student;
         Query<StudentsDataSet> query = session.createQuery(cq);
         try{
-            student = query.getSingleResult();
+            student = (StudentsDataSet) query.getSingleResult();
         }catch (NoResultException ex){
             System.out.println("Студента с таким логином не найдено");
             return null;
@@ -61,8 +60,8 @@ public class StudentsDAO {
         return students;
     }
 
-    public long insertStudent(String name, String surname, String email, String password, String regDate) throws HibernateException {
-        return (Long) session.save(new StudentsDataSet(name, surname, email, password, regDate));
+    public void insertStudent(String name, String surname, String email, String password, String regDate) throws HibernateException {
+         session.save(new StudentsDataSet(name, surname, email, password, regDate));
     }
 
 }

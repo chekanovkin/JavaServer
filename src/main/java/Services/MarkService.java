@@ -1,6 +1,7 @@
 package Services;
 
-import DAO.StudentsDAO;
+import DAO.GroupsDAO;
+import DAO.MarksDAO;
 import DataSets.*;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -10,15 +11,13 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-import java.util.List;
-
-public class StudentService implements UserService_Interface{
+public class MarkService {
 
     private final SessionFactory sessionFactory;
     private static final String hibernate_show_sql = "true";
     private static final String hibernate_hbm2ddl_auto = "update";
 
-    public StudentService() {
+    public MarkService(){
         Configuration configuration = getPostgreConfiguration();
         sessionFactory = createSessionFactory(configuration);
     }
@@ -49,38 +48,14 @@ public class StudentService implements UserService_Interface{
         return configuration.buildSessionFactory(serviceRegistry);
     }
 
-    public void addUser(String name, String surname, String email, String password, String regDate) throws Exception {
+    public void addMark(String name) throws Exception {
         try {
             Session session = sessionFactory.openSession();
             Transaction transaction = session.beginTransaction();
-            StudentsDAO dao = new StudentsDAO(session);
-            dao.insertStudent(name, surname, email, password, regDate);
+            MarksDAO dao = new MarksDAO(session);
+            dao.insertMark(name);
             transaction.commit();
             session.close();
-        } catch (HibernateException e) {
-            throw new Exception(e);
-        }
-    }
-
-    public StudentsDataSet getCurUserByLogin(String login) throws Exception{
-        try {
-            Session session = sessionFactory.openSession();
-            StudentsDAO dao = new StudentsDAO(session);
-            StudentsDataSet student = dao.getStudentByLogin(login);
-            session.close();
-            return student;
-        } catch (HibernateException e) {
-            throw new Exception(e);
-        }
-    }
-
-    public List<StudentsDataSet> getCurUserByFIO(String name, String surname, String patronymic) throws Exception{
-        try {
-            Session session = sessionFactory.openSession();
-            StudentsDAO dao = new StudentsDAO(session);
-            List<StudentsDataSet> student = dao.getStudentsByFIO(name, surname, patronymic);
-            session.close();
-            return student;
         } catch (HibernateException e) {
             throw new Exception(e);
         }

@@ -58,7 +58,7 @@ public class TestsDAO {
         return tests;
     }
 
-    public long insertTest(String name, String creation_time, boolean test_type) throws HibernateException {
-        return (Long) session.save(new TestsDataSet(name, creation_time, test_type));
+    public void insertTest(String name, String creation_time, boolean test_type) throws HibernateException {
+        session.save(new TestsDataSet(name, creation_time, test_type));
     }
 }

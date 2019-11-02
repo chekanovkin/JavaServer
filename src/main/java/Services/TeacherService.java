@@ -1,7 +1,7 @@
 package Services;
 
 import DAO.TeachersDAO;
-import DataSets.TeachersDataSet;
+import DataSets.*;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -25,13 +25,18 @@ public class TeacherService implements UserService_Interface{
 
     public Configuration getPostgreConfiguration() {
         Configuration configuration = new Configuration();
+        configuration.addAnnotatedClass(AnswersDataSet.class);
+        configuration.addAnnotatedClass(GroupsDataSet.class);
+        configuration.addAnnotatedClass(MarksDataSet.class);
+        configuration.addAnnotatedClass(QuestionsDataSet.class);
+        configuration.addAnnotatedClass(StudentsDataSet.class);
         configuration.addAnnotatedClass(TeachersDataSet.class);
-
-        configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgresSQL");
+        configuration.addAnnotatedClass(TestsDataSet.class);
+        configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQL94Dialect");
         configuration.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
-        configuration.setProperty("hibernate.connection.url", "jdbc:postgresql:./postgresqldb");
-        configuration.setProperty("hibernate.connection.username", "test");
-        configuration.setProperty("hibernate.connection.password", "test");
+        configuration.setProperty("hibernate.connection.url", "jdbc:postgresql://localhost:5432/postgres");
+        configuration.setProperty("hibernate.connection.username", "postgres");
+        configuration.setProperty("hibernate.connection.password", "kainen");
         configuration.setProperty("hibernate.show_sql", hibernate_show_sql);
         configuration.setProperty("hibernate.hbm2ddl.auto", hibernate_hbm2ddl_auto);
 
@@ -45,15 +50,14 @@ public class TeacherService implements UserService_Interface{
         return configuration.buildSessionFactory(serviceRegistry);
     }
 
-    public long addUser(String name, String surname, String email, String password, String regDate) throws Exception {
+    public void addUser(String name, String surname, String email, String password, String regDate) throws Exception {
         try {
             Session session = sessionFactory.openSession();
             Transaction transaction = session.beginTransaction();
             TeachersDAO dao = new TeachersDAO(session);
-            long id = dao.insertTeacher(name, surname, email, password, regDate);
+            dao.insertTeacher(name, surname, email, password, regDate);
             transaction.commit();
             session.close();
-            return id;
         } catch (HibernateException e) {
             throw new Exception(e);
         }

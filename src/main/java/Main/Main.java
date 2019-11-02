@@ -1,7 +1,11 @@
 package Main;
 
 import java.io.File;
+import java.util.Scanner;
 
+import DataSets.StudentsDataSet;
+import Services.MarkService;
+import Services.StudentService;
 import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.startup.Tomcat;
@@ -14,6 +18,7 @@ public class Main {
     public static void main(String[] args) throws Exception{
         String webappDirLocation = "src/main/webapp/";
         Tomcat tomcat = new Tomcat();
+        MarkService service = new MarkService();
 
         //The port that we should run on can be set into an environment variable
         //Look for that variable and default to 8080 if it isn't there.
@@ -30,10 +35,16 @@ public class Main {
         resources.addPreResources(new DirResourceSet(resources, "/WEB-INF/classes",
                 additionWebInfClasses.getAbsolutePath(), "/"));
         ctx.setResources(resources);
-
+        Scanner scan = new Scanner(System.in);
+        String word = scan.nextLine();
+        scan.close();
+        if(word.equals("start")){
+            System.out.println("werwrwer");
+            service.addMark("99/100");
+            //System.out.println(student.getEmail());
+        }
         tomcat.start();
         System.out.println("Server started");
         tomcat.getServer().await();
     }
-
 }
