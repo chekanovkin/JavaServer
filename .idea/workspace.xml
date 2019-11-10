@@ -1,39 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bb64434-99e9-410e-86c7-e41418c63100" name="Default Changelist" comment="Добавлен сервис к &quot;студенту&quot;">
-      <change afterPath="$PROJECT_DIR$/.idea/mainrep.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Services/AnswerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Services/GroupService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Services/MarkService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Servlets/RegistrationServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0bb64434-99e9-410e-86c7-e41418c63100" name="Default Changelist" comment="Протестированные сервлеты и связи бд">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/AnswersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/AnswersDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/GroupsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/GroupsDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/MarksDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/MarksDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/QuestionsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/QuestionsDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/StudentsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/StudentsDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/TeachersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/TeachersDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/TestsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/TestsDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/AnswersDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataSets/AnswersDataSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/GroupsDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataSets/GroupsDataSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/MarksDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataSets/MarksDataSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/QuestionsDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataSets/QuestionsDataSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/StudentsDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataSets/StudentsDataSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/TeachersDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataSets/TeachersDataSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataSets/TestsDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataSets/TestsDataSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/TeacherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/UserService_Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/UserService_Interface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/TestServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/TestServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DataSets/AnswersDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataSets/AnswersDataSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DataSets/TestsDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataSets/TestsDataSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/TestServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/TestServlet.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570984556884</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Протестированные сервлеты и связи бд">
+      <created>1572701375237</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1572701375237</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -198,6 +174,7 @@
     </ignored-roots>
     <MESSAGE value="Тестовое подключение к локалхосту" />
     <MESSAGE value="Добавлен сервис к &quot;студенту&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлен сервис к &quot;студенту&quot;" />
+    <MESSAGE value="Протестированные сервлеты и связи бд" />
+    <option name="LAST_COMMIT_MESSAGE" value="Протестированные сервлеты и связи бд" />
   </component>
 </project>
