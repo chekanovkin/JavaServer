@@ -8,6 +8,8 @@ import java.util.Set;
 @Table (name = "Student")
 public class StudentsDataSet {
 
+    String role = "";
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
@@ -64,7 +66,7 @@ public class StudentsDataSet {
     public StudentsDataSet(){
     }
 
-    public StudentsDataSet(String name, String surname, String patronymic, String email, String password, String regDate, String organization) {
+    public StudentsDataSet(String name, String surname, String patronymic, String email, String password, String regDate, String organization, String role) {
         this.name = name;
         this.surname = surname;
         this.patronymic = patronymic;
@@ -74,7 +76,7 @@ public class StudentsDataSet {
         this.organization = organization;
     }
 
-    public StudentsDataSet(String name, String surname, String email, String password, String regDate) {
+    public StudentsDataSet(String name, String surname, String email, String password, String regDate, String role) {
         this.name = name;
         this.surname = surname;
         this.email = email;
@@ -88,6 +90,14 @@ public class StudentsDataSet {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getName() {

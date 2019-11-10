@@ -30,20 +30,20 @@ public class TestServlet extends HttpServlet {
             throws ServletException, IOException {
         ServletOutputStream out = resp.getOutputStream();
         try{
+            String str = "{\"email\":\"muhaha@mail.ru\",\"surname\":\"Zara\",\"name\":\"Muha\",\"patronymic\":\"Lola\",\"role\":\"student\",\"password\":\"12345678Qq\"}";
             Gson gson = new Gson();
-            /*StudentsDataSet student = service.getCurUserByLogin("ymnyaga@yandex.ru");
-            String json = gson.toJson(student);*/
-            MarksDataSet mark = new MarksDataSet("84/100");
+            StudentsDataSet student = gson.fromJson(str, StudentsDataSet.class);
+            service.addUser(student.getName(), student.getSurname(), student.getEmail(), student.getPassword(), student.getRegDate());
+            //StudentsDataSet student = service.getCurUserByLogin("ymnyaga@yandex.ru");
+            String json = gson.toJson(student);
+            /*MarksDataSet mark = new MarksDataSet("84/100");
             service1.addMark("84/100");
-            String json = gson.toJson(mark);
+            String json = gson.toJson(mark);*/
             out.write(json.getBytes());
             out.flush();
             out.close();
         }catch (Exception e){
             e.printStackTrace();
         }
-        /*out.write("hello gays".getBytes());
-        out.flush();
-        out.close();*/
     }
 }

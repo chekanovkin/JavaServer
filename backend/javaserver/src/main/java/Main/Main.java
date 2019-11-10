@@ -6,6 +6,9 @@ import java.util.Scanner;
 import DataSets.StudentsDataSet;
 import Services.MarkService;
 import Services.StudentService;
+import Servlets.RegistrationServlet;
+import Servlets.TestServlet;
+import org.apache.catalina.Context;
 import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.startup.Tomcat;
@@ -14,9 +17,9 @@ import org.apache.catalina.webresources.StandardRoot;
 
 public class Main {
 
-//TODO@ Проверка загрузки
+    //TODO@ Проверка загрузки
     public static void main(String[] args) throws Exception{
-        String webappDirLocation = "src/main/webapp/";
+        String webappDirLocation = "C:\\Users\\ymnya\\IdeaProjects\\mainrep\\backend\\javaserver\\src\\main\\webapp";
         Tomcat tomcat = new Tomcat();
         MarkService service = new MarkService();
 
@@ -25,24 +28,22 @@ public class Main {
 
         tomcat.setPort(8080);
 
-        StandardContext ctx = (StandardContext) tomcat.addWebapp("/", new File(webappDirLocation).getAbsolutePath());
+        /*StandardContext ctx = (StandardContext) tomcat.addWebapp("/", new File(webappDirLocation).getAbsolutePath());
         System.out.println("configuring app with basedir: " + new File("./" + webappDirLocation).getAbsolutePath());
 
         // Declare an alternative location for your "WEB-INF/classes" dir
         // Servlet 3.0 annotation will work
-        File additionWebInfClasses = new File("target/classes");
+        File additionWebInfClasses = new File("target");
         WebResourceRoot resources = new StandardRoot(ctx);
         resources.addPreResources(new DirResourceSet(resources, "/WEB-INF/classes",
                 additionWebInfClasses.getAbsolutePath(), "/"));
-        ctx.setResources(resources);
-        Scanner scan = new Scanner(System.in);
-        String word = scan.nextLine();
-        scan.close();
-        if(word.equals("start")){
-            System.out.println("werwrwer");
-            service.addMark("99/100");
-            //System.out.println(student.getEmail());
-        }
+        ctx.setResources(resources);*/
+        Context ctx = tomcat.addContext("/", new File(".").getAbsolutePath());
+        Tomcat.addServlet(ctx, "MyServlet", new TestServlet());
+        Tomcat.addServlet(ctx, "RegServlet", new RegistrationServlet());
+
+        ctx.addServletMappingDecoded("/hello", "MyServlet");
+        ctx.addServletMappingDecoded("/registration", "RegServlet");
         tomcat.start();
         System.out.println("Server started");
         tomcat.getServer().await();

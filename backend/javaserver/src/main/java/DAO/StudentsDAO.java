@@ -61,7 +61,7 @@ public class StudentsDAO {
     }
 
     public void insertStudent(String name, String surname, String email, String password, String regDate) throws HibernateException {
-         session.save(new StudentsDataSet(name, surname, email, password, regDate));
+         session.save(new StudentsDataSet(name, surname, email, password, regDate, "student"));
     }
 
 }

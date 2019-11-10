@@ -8,6 +8,7 @@ import Services.UserService_Interface;
 import com.google.gson.Gson;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletInputStream;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,11 +27,11 @@ public class RegistrationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String role = req.getParameter("who");
         Gson gson = new Gson();
-        if(role.equals("student")){
+        StudentsDataSet stud = gson.fromJson(req.getParameter("Body"), StudentsDataSet.class);
+        if(stud.getRole().equals("student")){
             service = new StudentService();
-            StudentsDataSet student = gson.fromJson(req.getParameter("data"), StudentsDataSet.class);
+            StudentsDataSet student = gson.fromJson(req.getParameter("Body"), StudentsDataSet.class);
             try {
                 service.addUser(student.getName(), student.getSurname(), student.getEmail(), student.getPassword(), student.getRegDate());
             }catch (Exception e){
@@ -40,7 +41,7 @@ public class RegistrationServlet extends HttpServlet {
             out.write(gson.toJson("OK").getBytes());
             out.flush();
             out.close();
-        } else if(role.equals("teacher")){
+        } else if(stud.getRole().equals("teacher")){
             service = new TeacherService();
             TeachersDataSet teacher = gson.fromJson(req.getParameter("data"), TeachersDataSet.class);
             try {
