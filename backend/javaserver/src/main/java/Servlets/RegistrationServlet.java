@@ -18,20 +18,20 @@ import java.io.IOException;
 
 @WebServlet(
         name = "RegServlet",
-        urlPatterns = {"/registration"}
+        urlPatterns = {"/check"}
 )
 public class RegistrationServlet extends HttpServlet {
 
     private UserService_Interface service;
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Gson gson = new Gson();
-        StudentsDataSet stud = gson.fromJson(req.getParameter("Body"), StudentsDataSet.class);
+        StudentsDataSet stud = gson.fromJson(req.getHeader("body"), StudentsDataSet.class);
         if(stud.getRole().equals("student")){
             service = new StudentService();
-            StudentsDataSet student = gson.fromJson(req.getParameter("Body"), StudentsDataSet.class);
+            StudentsDataSet student = gson.fromJson(req.getHeader("body"), StudentsDataSet.class);
             try {
                 service.addUser(student.getName(), student.getSurname(), student.getEmail(), student.getPassword(), student.getRegDate());
             }catch (Exception e){
@@ -43,7 +43,7 @@ public class RegistrationServlet extends HttpServlet {
             out.close();
         } else if(stud.getRole().equals("teacher")){
             service = new TeacherService();
-            TeachersDataSet teacher = gson.fromJson(req.getParameter("data"), TeachersDataSet.class);
+            TeachersDataSet teacher = gson.fromJson(req.getHeader("body"), TeachersDataSet.class);
             try {
                 service.addUser(teacher.getName(), teacher.getSurname(), teacher.getEmail(), teacher.getPassword(), teacher.getRegDate());
             }catch (Exception e){
