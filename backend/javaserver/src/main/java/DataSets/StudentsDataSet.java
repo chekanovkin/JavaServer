@@ -180,6 +180,10 @@ public class StudentsDataSet {
         this.passedTests_id = passedTests_id;
     }
 
+    public void addPassedTests(TestsDataSet test){
+        passedTests_id.add(test);
+    }
+
     public Set<GroupsDataSet> getGroups_id() {
         return groups_id;
     }

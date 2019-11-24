@@ -61,6 +61,10 @@ public class TeachersDataSet {
         groups = new HashSet<>();
     }
 
+    public void addGroup(GroupsDataSet group){
+        groups.add(group);
+    }
+
     public int getId() {
         return id;
     }

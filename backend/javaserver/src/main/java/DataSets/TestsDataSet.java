@@ -30,6 +30,9 @@ public class TestsDataSet {
     @Column(name = "attempts")
     private int attempts;
 
+    @Column(name = "deprecated")
+    private boolean deprecated;
+
     @Column(name = "about_test", length = 254)
     private String about_test;
 
@@ -121,6 +124,14 @@ public class TestsDataSet {
 
     public void setTest_type(boolean test_type) {
         this.test_type = test_type;
+    }
+
+    public boolean isDeprecated() {
+        return deprecated;
+    }
+
+    public void setDeprecated(boolean deprecated) {
+        this.deprecated = deprecated;
     }
 
     public void setAttempts(int attempts) {

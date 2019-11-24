@@ -33,7 +33,7 @@ public class TestServlet extends HttpServlet {
             String str = "{\"email\":\"muhaha@mail.ru\",\"surname\":\"Zara\",\"name\":\"Muha\",\"patronymic\":\"Lola\",\"role\":\"student\",\"password\":\"12345678Qq\"}";
             Gson gson = new Gson();
             StudentsDataSet student = gson.fromJson(str, StudentsDataSet.class);
-            service.addUser(student.getName(), student.getSurname(), student.getEmail(), student.getPassword(), student.getRegDate());
+            //service.addUser(student.getName(), student.getSurname(), student.getEmail(), student.getPassword(), student.getRegDate());
             //StudentsDataSet student = service.getCurUserByLogin("ymnyaga@yandex.ru");
             String json = gson.toJson(student);
             /*MarksDataSet mark = new MarksDataSet("84/100");

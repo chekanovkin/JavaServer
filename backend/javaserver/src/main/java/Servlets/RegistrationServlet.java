@@ -6,9 +6,7 @@ import Services.StudentService;
 import Services.TeacherService;
 import Services.UserService_Interface;
 import com.google.gson.Gson;
-
 import javax.servlet.ServletException;
-import javax.servlet.ServletInputStream;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,26 +31,40 @@ public class RegistrationServlet extends HttpServlet {
             service = new StudentService();
             StudentsDataSet student = gson.fromJson(req.getHeader("body"), StudentsDataSet.class);
             try {
-                service.addUser(student.getName(), student.getSurname(), student.getEmail(), student.getPassword(), student.getRegDate());
+                if(service.getCurUserByLogin(stud.getEmail()) == null){
+                    ServletOutputStream out = resp.getOutputStream();
+                    out.write(gson.toJson("Student already exists").getBytes());
+                    out.flush();
+                    out.close();
+                } else{
+                    service.addUser(student.getName(), student.getSurname(), student.getEmail(), student.getPassword(), student.getRegDate());
+                    ServletOutputStream out = resp.getOutputStream();
+                    out.write(gson.toJson("OK").getBytes());
+                    out.flush();
+                    out.close();
+                }
             }catch (Exception e){
                 e.printStackTrace();
             }
-            ServletOutputStream out = resp.getOutputStream();
-            out.write(gson.toJson("OK").getBytes());
-            out.flush();
-            out.close();
         } else if(stud.getRole().equals("teacher")){
             service = new TeacherService();
             TeachersDataSet teacher = gson.fromJson(req.getHeader("body"), TeachersDataSet.class);
             try {
-                service.addUser(teacher.getName(), teacher.getSurname(), teacher.getEmail(), teacher.getPassword(), teacher.getRegDate());
+                if(service.getCurUserByLogin(stud.getEmail()) == null){
+                    ServletOutputStream out = resp.getOutputStream();
+                    out.write(gson.toJson("Teacher already exists").getBytes());
+                    out.flush();
+                    out.close();
+                } else{
+                    service.addUser(teacher.getName(), teacher.getSurname(), teacher.getEmail(), teacher.getPassword(), teacher.getRegDate());
+                    ServletOutputStream out = resp.getOutputStream();
+                    out.write(gson.toJson("OK").getBytes());
+                    out.flush();
+                    out.close();
+                }
             }catch (Exception e){
                 e.printStackTrace();
             }
-            ServletOutputStream out = resp.getOutputStream();
-            out.write(gson.toJson("OK").getBytes());
-            out.flush();
-            out.close();
         } else{
             ServletOutputStream out = resp.getOutputStream();
             out.write(gson.toJson("BAD_REQUEST").getBytes());
