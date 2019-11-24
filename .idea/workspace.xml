@@ -2,8 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bb64434-99e9-410e-86c7-e41418c63100" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/LogInServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/TeachersDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/TeachersDataSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/Services/TestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/Services/TestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/LogInServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/LogInServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/RegistrationServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/DAO/AnswersDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/DAO/AnswersDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/DAO/GroupsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/DAO/GroupsDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/DAO/MarksDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/DAO/MarksDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/DAO/QuestionsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/DAO/QuestionsDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/DAO/StudentsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/DAO/StudentsDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/DAO/TeachersDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/DAO/TeachersDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/DAO/TestsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/DAO/TestsDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/AnswersDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/AnswersDataSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/GroupsDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/GroupsDataSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/MarksDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/MarksDataSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/QuestionsDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/QuestionsDataSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/StudentsDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/StudentsDataSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/TeachersDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/TeachersDataSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/TestsDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/TestsDataSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/Main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/Services/AnswerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/Services/AnswerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/Services/GroupService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/Services/GroupService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/Services/MarkService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/Services/MarkService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/Services/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/Services/StudentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/Services/TeacherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/Services/TeacherService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/Services/UserService_Interface.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/Services/UserService_Interface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/Servlets/RegistrationServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/Servlets/RegistrationServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/Servlets/TestServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/Servlets/TestServlet.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

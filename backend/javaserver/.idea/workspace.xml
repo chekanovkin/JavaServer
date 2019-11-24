@@ -2,38 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bb64434-99e9-410e-86c7-e41418c63100" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../.idea/mainrep2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/AnswerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/AnswerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/GroupService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/MarkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/MarkService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Services/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Services/TeacherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/RegistrationServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/TestServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/TestServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/AnswersDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/AnswersDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/GroupsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/GroupsDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/MarksDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/MarksDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/QuestionsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/QuestionsDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/StudentsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/StudentsDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/TeachersDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/TeachersDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/TestsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/TestsDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DataSets/StudentsDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataSets/StudentsDataSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Services/AnswerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Services/AnswerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Services/GroupService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Services/GroupService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Services/MarkService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Services/MarkService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Services/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Services/StudentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Services/TeacherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Services/TeacherService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Servlets/RegistrationServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/RegistrationServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/TestServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/TestServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/index_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.8081/work/Tomcat/localhost/ROOT/org/apache/jsp/index_jsp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat.8080/work/Tomcat/localhost/ROOT/org/apache/jsp/index_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.8081/work/Tomcat/localhost/ROOT/org/apache/jsp/index_jsp.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +118,9 @@
       <workItem from="1573452355979" duration="536000" />
       <workItem from="1573452916225" duration="1480000" />
       <workItem from="1573500253157" duration="6918000" />
-      <workItem from="1573573313200" duration="4269000" />
+      <workItem from="1573573313200" duration="5072000" />
+      <workItem from="1573584125519" duration="1316000" />
+      <workItem from="1574197905325" duration="601000" />
     </task>
     <task id="LOCAL-00001" summary="Тестовое подключение к локалхосту">
       <created>1570035373394</created>
@@ -185,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570984556884</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Изменён сервлет обработки JSON">
+      <created>1573578136087</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1573578136087</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,7 +204,8 @@
     </ignored-roots>
     <MESSAGE value="Тестовое подключение к локалхосту" />
     <MESSAGE value="Добавлен сервис к &quot;студенту&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлен сервис к &quot;студенту&quot;" />
+    <MESSAGE value="Изменён сервлет обработки JSON" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменён сервлет обработки JSON" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
