@@ -1,6 +1,8 @@
 package Main;
 
 import java.io.File;
+
+import Servlets.LogInServlet;
 import Servlets.RegistrationServlet;
 import Servlets.TestServlet;
 import org.apache.catalina.Context;
@@ -18,16 +20,18 @@ public class Main {
 
         tomcat.setPort(8081);
 
-        Context ctx = tomcat.addContext("/", new File("mainrep2").getAbsolutePath());
+        Context ctx = tomcat.addContext("/", new File("").getAbsolutePath());
         Tomcat.addServlet(ctx, "MyServlet", new TestServlet());
         Tomcat.addServlet(ctx, "RegServlet", new RegistrationServlet());
-        File additionWebInfClasses = new File("mainrep2/backend/javaserver/target");
+        Tomcat.addServlet(ctx, "LoginServlet", new LogInServlet());
+        File additionWebInfClasses = new File("backend/javaserver/target");
         WebResourceRoot resources = new StandardRoot(ctx);
         resources.addPreResources(new DirResourceSet(resources, "/WEB-INF/classes",
                 additionWebInfClasses.getAbsolutePath(), "/"));
         ctx.setResources(resources);
 
-        ctx.addServletMappingDecoded("/check", "RegServlet");
+        ctx.addServletMappingDecoded("/checkreg", "RegServlet");
+        ctx.addServletMappingDecoded("/checklog", "LogInServlet");
         tomcat.start();
         System.out.println("Server started");
         tomcat.getServer().await();

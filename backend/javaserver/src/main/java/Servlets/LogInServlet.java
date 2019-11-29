@@ -22,7 +22,7 @@ import java.util.Set;
 
 @WebServlet(
         name = "LogInServlet",
-        urlPatterns = {"/logIn"}
+        urlPatterns = {"/checklog"}
 )
 
 public class LogInServlet extends HttpServlet {
@@ -79,7 +79,7 @@ public class LogInServlet extends HttpServlet {
                 out.close();
             } else {
                 ServletOutputStream out = resp.getOutputStream();
-                out.write(gson.toJson("Error : no such a user was founded").getBytes());
+                out.write(gson.toJson("Error : no such user was found").getBytes());
                 out.flush();
                 out.close();
             }

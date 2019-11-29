@@ -16,7 +16,7 @@ import java.io.IOException;
 
 @WebServlet(
         name = "RegServlet",
-        urlPatterns = {"/check"}
+        urlPatterns = {"/checkreg"}
 )
 public class RegistrationServlet extends HttpServlet {
 
@@ -33,7 +33,7 @@ public class RegistrationServlet extends HttpServlet {
             try {
                 if(service.getCurUserByLogin(stud.getEmail()) != null){
                     ServletOutputStream out = resp.getOutputStream();
-                    out.write(gson.toJson("Already exists").getBytes());
+                    out.write(gson.toJson("User already exists").getBytes());
                     out.flush();
                     out.close();
                 } else{
@@ -52,7 +52,7 @@ public class RegistrationServlet extends HttpServlet {
             try {
                 if(service.getCurUserByLogin(stud.getEmail()) != null){
                     ServletOutputStream out = resp.getOutputStream();
-                    out.write(gson.toJson("No such login").getBytes());
+                    out.write(gson.toJson("User already exists").getBytes());
                     out.flush();
                     out.close();
                 } else{
