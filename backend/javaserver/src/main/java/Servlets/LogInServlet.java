@@ -51,6 +51,7 @@ public class LogInServlet extends HttpServlet {
                     }
                 }
                 ServletOutputStream out = resp.getOutputStream();
+                out.write(gson.toJson("student").getBytes());
                 out.write(gson.toJson("allowed tests:").getBytes());
                 out.write(gson.toJson(cur_tests).getBytes());
                 out.write(gson.toJson("passed tests:").getBytes());
@@ -68,10 +69,12 @@ public class LogInServlet extends HttpServlet {
                     }
                 }
                 ServletOutputStream out = resp.getOutputStream();
+                out.write(gson.toJson("teacher").getBytes());
                 out.write(gson.toJson("deprecated tests:").getBytes());
                 out.write(gson.toJson(deprecatedTests).getBytes());
                 out.write(gson.toJson("actual tests:").getBytes());
                 out.write(gson.toJson(actualTests).getBytes());
+                out.write(gson.toJson("amount of groups: " + teacher.getGroups()).getBytes());
                 out.flush();
                 out.close();
             } else {

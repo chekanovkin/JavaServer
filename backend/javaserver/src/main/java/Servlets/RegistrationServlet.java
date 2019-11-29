@@ -31,9 +31,9 @@ public class RegistrationServlet extends HttpServlet {
             service = new StudentService();
             StudentsDataSet student = gson.fromJson(req.getHeader("body"), StudentsDataSet.class);
             try {
-                if(service.getCurUserByLogin(stud.getEmail()) == null){
+                if(service.getCurUserByLogin(stud.getEmail()) != null){
                     ServletOutputStream out = resp.getOutputStream();
-                    out.write(gson.toJson("Student already exists").getBytes());
+                    out.write(gson.toJson("Already exists").getBytes());
                     out.flush();
                     out.close();
                 } else{
@@ -50,9 +50,9 @@ public class RegistrationServlet extends HttpServlet {
             service = new TeacherService();
             TeachersDataSet teacher = gson.fromJson(req.getHeader("body"), TeachersDataSet.class);
             try {
-                if(service.getCurUserByLogin(stud.getEmail()) == null){
+                if(service.getCurUserByLogin(stud.getEmail()) != null){
                     ServletOutputStream out = resp.getOutputStream();
-                    out.write(gson.toJson("Teacher already exists").getBytes());
+                    out.write(gson.toJson("No such login").getBytes());
                     out.flush();
                     out.close();
                 } else{

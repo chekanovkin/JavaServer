@@ -9,6 +9,8 @@ import java.util.Set;
 
 public class TeachersDataSet {
 
+    private String role = "";
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
@@ -26,7 +28,7 @@ public class TeachersDataSet {
     @Column(name = "email", updatable = false, unique = true, nullable = false, length = 50)
     private String email;
 
-    @Column(name = "password", unique = true, nullable = false, length = 50)
+    @Column(name = "password", nullable = false, length = 50)
     private String password;
 
     @Column(name = "regdate")
@@ -41,7 +43,7 @@ public class TeachersDataSet {
     public TeachersDataSet(){
     }
 
-    public TeachersDataSet(String name, String surname, String patronymic, String email, String password, String regDate,  String organization) {
+    public TeachersDataSet(String name, String surname, String patronymic, String email, String password, String regDate,  String organization, String role) {
         this.name = name;
         this.surname = surname;
         this.patronymic = patronymic;
@@ -50,15 +52,17 @@ public class TeachersDataSet {
         this.regDate = regDate;
         this.organization = organization;
         groups = new HashSet<>();
+        this.role = role;
     }
 
-    public TeachersDataSet(String name, String surname, String email, String password, String regDate) {
+    public TeachersDataSet(String name, String surname, String email, String password, String regDate, String role) {
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.password = password;
         this.regDate = regDate;
         groups = new HashSet<>();
+        this.role = role;
     }
 
     public void addGroup(GroupsDataSet group){
@@ -71,6 +75,14 @@ public class TeachersDataSet {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getName() {

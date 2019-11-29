@@ -8,7 +8,7 @@ import java.util.Set;
 @Table (name = "Student")
 public class StudentsDataSet {
 
-    String role = "";
+    private String role = "";
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -74,6 +74,7 @@ public class StudentsDataSet {
         this.password = password;
         this.regDate = regDate;
         this.organization = organization;
+        this.role = role;
     }
 
     public StudentsDataSet(String name, String surname, String email, String password, String regDate, String role) {
@@ -82,6 +83,7 @@ public class StudentsDataSet {
         this.email = email;
         this.password = password;
         this.regDate = regDate;
+        this.role = role;
     }
 
     public int getId() {

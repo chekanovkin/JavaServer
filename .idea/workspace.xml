@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bb64434-99e9-410e-86c7-e41418c63100" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/LogInServlet.java" afterDir="false" />
+    <list default="true" id="0bb64434-99e9-410e-86c7-e41418c63100" name="Default Changelist" comment="Единый сервлет входа в лк">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/DAO/TeachersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DAO/TeachersDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/StudentsDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/StudentsDataSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/TeachersDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/TeachersDataSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/LogInServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/LogInServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/RegistrationServlet.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -191,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574585625376</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Единый сервлет входа в лк">
+      <created>1574606636478</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1574606636478</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +255,7 @@
     <MESSAGE value="Протестированные сервлеты и связи бд" />
     <MESSAGE value="Сервлеты личного кабинета учителя и ученика" />
     <MESSAGE value="Сервлеты личного кабинета учителя и ученика2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сервлеты личного кабинета учителя и ученика2" />
+    <MESSAGE value="Единый сервлет входа в лк" />
+    <option name="LAST_COMMIT_MESSAGE" value="Единый сервлет входа в лк" />
   </component>
 </project>

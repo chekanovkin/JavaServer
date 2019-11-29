@@ -61,7 +61,7 @@ public class TeachersDAO {
         return teachers;
     }
 
-    public void insertTeacher(String name, String surname, String email, String password, String regDate) throws HibernateException {
-        session.save(new TeachersDataSet(name, surname, email, password, regDate));
+    public void insertTeacher(String name, String surname, String email, String password, String regDate, String role) throws HibernateException {
+        session.save(new TeachersDataSet(name, surname, email, password, regDate, "teacher"));
     }
 }
