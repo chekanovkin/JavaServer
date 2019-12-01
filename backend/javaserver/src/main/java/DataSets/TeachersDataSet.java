@@ -34,7 +34,7 @@ public class TeachersDataSet {
     @Column(name = "regdate")
     private String regDate;
 
-    @OneToMany(mappedBy = "teacher_id", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "teacher_id", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<GroupsDataSet> groups;
 
     @Column(name = "organization", length = 50)

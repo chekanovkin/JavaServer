@@ -3,17 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="0bb64434-99e9-410e-86c7-e41418c63100" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/DAO/TeachersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DAO/TeachersDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/StudentsDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/StudentsDataSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/HelpClasses/LoginAndPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/HelpClasses/LoginAndPassword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/Services/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/Services/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/TeachersDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/TeachersDataSet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/LogInServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/LogInServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/RegistrationServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/DAO/TeachersDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/DAO/TeachersDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/StudentsDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/StudentsDataSet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/TeachersDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/TeachersDataSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/Main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/Services/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/Services/StudentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/Servlets/RegistrationServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/Servlets/RegistrationServlet.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -215,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575038193833</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Стандартизирована отправка и приём ответов при помози JSON">
+      <created>1575208511276</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1575208511276</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,6 +271,18 @@
     <MESSAGE value="Сервлеты личного кабинета учителя и ученика2" />
     <MESSAGE value="Единый сервлет входа в лк" />
     <MESSAGE value="Исправлен сервлет логина, теперь отображает кто логинится" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлен сервлет логина, теперь отображает кто логинится" />
+    <MESSAGE value="Стандартизирована отправка и приём ответов при помози JSON" />
+    <option name="LAST_COMMIT_MESSAGE" value="Стандартизирована отправка и приём ответов при помози JSON" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/LogInServlet.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
