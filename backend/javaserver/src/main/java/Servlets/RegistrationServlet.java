@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.LinkedHashMap;
 
 @WebServlet(
         name = "RegServlet",
@@ -21,6 +22,7 @@ import java.io.IOException;
 public class RegistrationServlet extends HttpServlet {
 
     private UserService_Interface service;
+    private LinkedHashMap<String, String> responsejson = new LinkedHashMap<>();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -31,18 +33,16 @@ public class RegistrationServlet extends HttpServlet {
             service = new StudentService();
             StudentsDataSet student = gson.fromJson(req.getHeader("body"), StudentsDataSet.class);
             try {
+                ServletOutputStream out = resp.getOutputStream();
                 if(service.getCurUserByLogin(stud.getEmail()) != null){
-                    ServletOutputStream out = resp.getOutputStream();
-                    out.write(gson.toJson("User already exists").getBytes());
-                    out.flush();
-                    out.close();
+                    responsejson.put("status","Error : User already exists");
                 } else{
                     service.addUser(student.getName(), student.getSurname(), student.getEmail(), student.getPassword(), student.getRegDate());
-                    ServletOutputStream out = resp.getOutputStream();
-                    out.write(gson.toJson("OK").getBytes());
-                    out.flush();
-                    out.close();
+                    responsejson.put("status","OK");
                 }
+                out.write(gson.toJson(responsejson).getBytes());
+                out.flush();
+                out.close();
             }catch (Exception e){
                 e.printStackTrace();
             }
@@ -50,24 +50,23 @@ public class RegistrationServlet extends HttpServlet {
             service = new TeacherService();
             TeachersDataSet teacher = gson.fromJson(req.getHeader("body"), TeachersDataSet.class);
             try {
+                ServletOutputStream out = resp.getOutputStream();
                 if(service.getCurUserByLogin(stud.getEmail()) != null){
-                    ServletOutputStream out = resp.getOutputStream();
-                    out.write(gson.toJson("User already exists").getBytes());
-                    out.flush();
-                    out.close();
+                    responsejson.put("status","Error : User already exists");
                 } else{
                     service.addUser(teacher.getName(), teacher.getSurname(), teacher.getEmail(), teacher.getPassword(), teacher.getRegDate());
-                    ServletOutputStream out = resp.getOutputStream();
-                    out.write(gson.toJson("OK").getBytes());
-                    out.flush();
-                    out.close();
+                    responsejson.put("status","OK");
                 }
+                out.write(gson.toJson(responsejson).getBytes());
+                out.flush();
+                out.close();
             }catch (Exception e){
                 e.printStackTrace();
             }
         } else{
             ServletOutputStream out = resp.getOutputStream();
-            out.write(gson.toJson("BAD_REQUEST").getBytes());
+            responsejson.put("status","Error : Bad request");
+            out.write(gson.toJson(responsejson).getBytes());
             out.flush();
             out.close();
         }

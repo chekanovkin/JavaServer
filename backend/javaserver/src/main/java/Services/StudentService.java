@@ -10,6 +10,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 public class StudentService implements UserService_Interface{
@@ -62,6 +63,7 @@ public class StudentService implements UserService_Interface{
         }
     }
 
+    @Transactional
     public StudentsDataSet getCurUserByLogin(String login) throws Exception{
         try {
             Session session = sessionFactory.openSession();

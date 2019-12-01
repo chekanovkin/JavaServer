@@ -36,7 +36,7 @@ public class StudentsDataSet {
     @Column(name = "organization", length = 50)
     private String organization;
 
-    @ManyToMany(cascade = {
+    @ManyToMany(fetch = FetchType.EAGER,cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
     })
@@ -44,10 +44,10 @@ public class StudentsDataSet {
             inverseJoinColumns = @JoinColumn(name = "mark_id"))
     private Set<MarksDataSet> mark_id = new HashSet<>();
 
-    @OneToOne(mappedBy = "student_id")
+    @OneToOne(fetch = FetchType.EAGER,mappedBy = "student_id")
     private AnswersDataSet answer_id;
 
-    @ManyToMany(cascade = {
+    @ManyToMany(fetch = FetchType.EAGER,cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
     })
@@ -55,7 +55,7 @@ public class StudentsDataSet {
             inverseJoinColumns = @JoinColumn(name = "test_id"))
     private Set<TestsDataSet> passedTests_id = new HashSet<>();
 
-    @ManyToMany(cascade = {
+    @ManyToMany(fetch = FetchType.EAGER,cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
     })

@@ -23,7 +23,7 @@ public class Main {
         Context ctx = tomcat.addContext("/", new File("").getAbsolutePath());
         Tomcat.addServlet(ctx, "MyServlet", new TestServlet());
         Tomcat.addServlet(ctx, "RegServlet", new RegistrationServlet());
-        Tomcat.addServlet(ctx, "LoginServlet", new LogInServlet());
+        Tomcat.addServlet(ctx, "LogInServlet", new LogInServlet());
         File additionWebInfClasses = new File("backend/javaserver/target");
         WebResourceRoot resources = new StandardRoot(ctx);
         resources.addPreResources(new DirResourceSet(resources, "/WEB-INF/classes",
