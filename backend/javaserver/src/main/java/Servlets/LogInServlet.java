@@ -4,6 +4,7 @@ import DataSets.GroupsDataSet;
 import DataSets.StudentsDataSet;
 import DataSets.TeachersDataSet;
 import DataSets.TestsDataSet;
+import HelpClasses.LoginAndPassword;
 import Services.StudentService;
 import Services.TeacherService;
 import Services.TestService;
@@ -36,50 +37,54 @@ public class LogInServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Gson gson = new Gson();
-        String login = gson.fromJson(req.getHeader("body"), String.class);
+        LoginAndPassword login_and_password = gson.fromJson(req.getHeader("body"), LoginAndPassword.class);
         try {
-            if(stud_service.getCurUserByLogin(login) != null){
-                StudentsDataSet student = stud_service.getCurUserByLogin(login);
-                List<TestsDataSet> cur_tests = test_service.getAllPublicTests();
-                Set<GroupsDataSet> curGroups = student.getGroups_id();
-                for(GroupsDataSet group : curGroups){
-                    cur_tests.addAll(group.getTest_id());
-                }
-                for(TestsDataSet test : cur_tests){
-                    if(test.isDeprecated()){
-                        cur_tests.remove(test);
+            if(stud_service.getCurUserByLogin(login_and_password.getSingin_email()) != null){
+                StudentsDataSet student = stud_service.getCurUserByLogin(login_and_password.getSingin_email());
+                if (student.getPassword().equals(login_and_password.getSingin_password())) {
+                    List<TestsDataSet> cur_tests = test_service.getAllPublicTests();
+                    Set<GroupsDataSet> curGroups = student.getGroups_id();
+                    for (GroupsDataSet group : curGroups) {
+                        cur_tests.addAll(group.getTest_id());
                     }
-                }
-                ServletOutputStream out = resp.getOutputStream();
-                out.write(gson.toJson("student").getBytes());
-                out.write(gson.toJson("allowed tests:").getBytes());
-                out.write(gson.toJson(cur_tests).getBytes());
-                out.write(gson.toJson("passed tests:").getBytes());
-                out.write(gson.toJson(student.getPassedTests_id()).getBytes());
-                out.flush();
-                out.close();
-            } else if(teacher_service.getCurUserByLogin(login) != null){
-                TeachersDataSet teacher = teacher_service.getCurUserByLogin(login);
-                List<TestsDataSet> allTests = test_service.getTestsByTeacher(teacher.getId());
-                for(TestsDataSet test : allTests){
-                    if(!test.isDeprecated()){
-                        actualTests.add(test);
-                    } else {
-                        deprecatedTests.add(test);
+                    for (TestsDataSet test : cur_tests) {
+                        if (test.isDeprecated()) {
+                            cur_tests.remove(test);
+                        }
                     }
+                    ServletOutputStream out = resp.getOutputStream();
+                    out.write(gson.toJson("student").getBytes());
+                    out.write(gson.toJson("allowed tests:").getBytes());
+                    out.write(gson.toJson(cur_tests).getBytes());
+                    out.write(gson.toJson("passed tests:").getBytes());
+                    out.write(gson.toJson(student.getPassedTests_id()).getBytes());
+                    out.flush();
+                    out.close();
                 }
-                ServletOutputStream out = resp.getOutputStream();
-                out.write(gson.toJson("teacher").getBytes());
-                out.write(gson.toJson("deprecated tests:").getBytes());
-                out.write(gson.toJson(deprecatedTests).getBytes());
-                out.write(gson.toJson("actual tests:").getBytes());
-                out.write(gson.toJson(actualTests).getBytes());
-                out.write(gson.toJson("amount of groups: " + teacher.getGroups()).getBytes());
-                out.flush();
-                out.close();
+            } else if(teacher_service.getCurUserByLogin(login_and_password.getSingin_email()) != null){
+                TeachersDataSet teacher = teacher_service.getCurUserByLogin(login_and_password.getSingin_email());
+                if (teacher.getPassword().equals(login_and_password.getSingin_password())) {
+                    List<TestsDataSet> allTests = test_service.getTestsByTeacher(teacher.getId());
+                    for (TestsDataSet test : allTests) {
+                        if (!test.isDeprecated()) {
+                            actualTests.add(test);
+                        } else {
+                            deprecatedTests.add(test);
+                        }
+                    }
+                    ServletOutputStream out = resp.getOutputStream();
+                    out.write(gson.toJson("teacher").getBytes());
+                    out.write(gson.toJson("deprecated tests:").getBytes());
+                    out.write(gson.toJson(deprecatedTests).getBytes());
+                    out.write(gson.toJson("actual tests:").getBytes());
+                    out.write(gson.toJson(actualTests).getBytes());
+                    out.write(gson.toJson("amount of groups: " + teacher.getGroups()).getBytes());
+                    out.flush();
+                    out.close();
+                }
             } else {
                 ServletOutputStream out = resp.getOutputStream();
-                out.write(gson.toJson("Error : no such user was found").getBytes());
+                out.write(gson.toJson("Error : incorrect login or password").getBytes());
                 out.flush();
                 out.close();
             }

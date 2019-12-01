@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bb64434-99e9-410e-86c7-e41418c63100" name="Default Changelist" comment="Единый сервлет входа в лк">
+    <list default="true" id="0bb64434-99e9-410e-86c7-e41418c63100" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/HelpClasses/LoginAndPassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/DAO/TeachersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DAO/TeachersDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/StudentsDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/StudentsDataSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/TeachersDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/TeachersDataSet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/LogInServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/LogInServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/RegistrationServlet.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,8 +51,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../teoriya_avtomatov" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -202,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574606636478</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Исправлен сервлет логина, теперь отображает кто логинится">
+      <created>1575038193833</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1575038193833</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,6 +261,7 @@
     <MESSAGE value="Сервлеты личного кабинета учителя и ученика" />
     <MESSAGE value="Сервлеты личного кабинета учителя и ученика2" />
     <MESSAGE value="Единый сервлет входа в лк" />
-    <option name="LAST_COMMIT_MESSAGE" value="Единый сервлет входа в лк" />
+    <MESSAGE value="Исправлен сервлет логина, теперь отображает кто логинится" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлен сервлет логина, теперь отображает кто логинится" />
   </component>
 </project>
