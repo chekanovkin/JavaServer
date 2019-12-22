@@ -1,9 +1,7 @@
 package DataSets;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -36,8 +34,8 @@ public class TeachersDataSet {
     @Column(name = "regdate")
     private String regDate;
 
-    @OneToMany(mappedBy = "teacher_id", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<GroupsDataSet> groups = new ArrayList<>();
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "teacher_id", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<GroupsDataSet> groups;
 
     @Column(name = "organization", length = 50)
     private String organization;
@@ -53,7 +51,7 @@ public class TeachersDataSet {
         this.password = password;
         this.regDate = regDate;
         this.organization = organization;
-        groups = new ArrayList<>();
+        groups = new HashSet<>();
         this.role = role;
     }
 
@@ -63,7 +61,7 @@ public class TeachersDataSet {
         this.email = email;
         this.password = password;
         this.regDate = regDate;
-        groups = new ArrayList<>();
+        groups = new HashSet<>();
         this.role = role;
     }
 
@@ -135,11 +133,11 @@ public class TeachersDataSet {
         this.regDate = regDate;
     }
 
-    public List<GroupsDataSet> getGroups() {
+    public Set<GroupsDataSet> getGroups() {
         return groups;
     }
 
-    public void setGroups(List<GroupsDataSet> groups) {
+    public void setGroups(Set<GroupsDataSet> groups) {
         this.groups = groups;
     }
 

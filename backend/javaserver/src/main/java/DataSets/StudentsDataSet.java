@@ -1,9 +1,7 @@
 package DataSets;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -38,32 +36,32 @@ public class StudentsDataSet {
     @Column(name = "organization", length = 50)
     private String organization;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = {
+    @ManyToMany(fetch = FetchType.EAGER,cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
     })
     @JoinTable(name = "mark_student", joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "mark_id"))
-    private List<MarksDataSet> mark_id = new ArrayList<>();
+    private Set<MarksDataSet> mark_id = new HashSet<>();
 
-    @OneToOne(fetch = FetchType.EAGER, mappedBy = "student_id")
+    @OneToOne(fetch = FetchType.EAGER,mappedBy = "student_id")
     private AnswersDataSet answer_id;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = {
+    @ManyToMany(fetch = FetchType.EAGER,cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
     })
     @JoinTable(name = "test_student", joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "test_id"))
-    private List<TestsDataSet> passedTests_id = new ArrayList<>();
+    private Set<TestsDataSet> passedTests_id = new HashSet<>();
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = {
+    @ManyToMany(fetch = FetchType.EAGER,cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
     })
     @JoinTable(name = "students_groups", joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "group_id"))
-    private List<GroupsDataSet> groups_id = new ArrayList<>();
+    private Set<GroupsDataSet> groups_id = new HashSet<>();
 
     public StudentsDataSet(){
     }
@@ -168,32 +166,32 @@ public class StudentsDataSet {
                 '}';
     }
 
-    public List<MarksDataSet> getMark_id() {
+    public Set<MarksDataSet> getMark_id() {
         return mark_id;
     }
 
-    public void setMark_id(List<MarksDataSet> mark_id) {
+    public void setMark_id(Set<MarksDataSet> mark_id) {
         this.mark_id = mark_id;
     }
 
-    public List<TestsDataSet> getPassedTests_id() {
+    public Set<TestsDataSet> getPassedTests_id() {
         return passedTests_id;
     }
 
-    public void setPassedTests_id(List<TestsDataSet> passedTests_id) {
+    public void setPassedTests_id(Set<TestsDataSet> passedTests_id) {
         this.passedTests_id = passedTests_id;
-    }
-
-    public List<GroupsDataSet> getGroups_id() {
-        return groups_id;
-    }
-
-    public void setGroups_id(List<GroupsDataSet> groups_id) {
-        this.groups_id = groups_id;
     }
 
     public void addPassedTests(TestsDataSet test){
         passedTests_id.add(test);
+    }
+
+    public Set<GroupsDataSet> getGroups_id() {
+        return groups_id;
+    }
+
+    public void setGroups_id(Set<GroupsDataSet> groups_id) {
+        this.groups_id = groups_id;
     }
 
     public AnswersDataSet getAnswer_id() {

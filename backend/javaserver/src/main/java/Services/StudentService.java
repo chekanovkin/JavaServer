@@ -63,7 +63,7 @@ public class StudentService implements UserService_Interface{
         }
     }
 
-
+    @Transactional
     public StudentsDataSet getCurUserByLogin(String login) throws Exception{
         try {
             Session session = sessionFactory.openSession();
