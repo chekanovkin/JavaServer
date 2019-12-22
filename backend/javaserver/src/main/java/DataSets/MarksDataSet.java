@@ -2,8 +2,8 @@ package DataSets;
 
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Marks")
@@ -24,7 +24,7 @@ public class MarksDataSet {
     })
     @JoinTable(name = "mark_student", joinColumns = @JoinColumn(name = "mark_id"),
             inverseJoinColumns = @JoinColumn(name = "student_id"))
-    private Set<StudentsDataSet> student_id = new HashSet<>();
+    private List<StudentsDataSet> student_id = new ArrayList<>();
 
     @Column(name = "mark")
     private String mark;
@@ -60,11 +60,11 @@ public class MarksDataSet {
         this.test_id = test_id;
     }
 
-    public Set<StudentsDataSet> getStudent_id() {
+    public List<StudentsDataSet> getStudent_id() {
         return student_id;
     }
 
-    public void setStudent_id(Set<StudentsDataSet> student_id) {
+    public void setStudent_id(List<StudentsDataSet> student_id) {
         this.student_id = student_id;
     }
 }

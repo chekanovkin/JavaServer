@@ -1,6 +1,7 @@
 package DataSets;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -27,7 +28,7 @@ public class QuestionsDataSet {
     private TestsDataSet test_id;
 
     @OneToMany(mappedBy = "question_id", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<AnswersDataSet> answers_id;
+    private List<AnswersDataSet> answers_id = new ArrayList<>();
 
     public QuestionsDataSet(){}
 
@@ -82,11 +83,11 @@ public class QuestionsDataSet {
         this.test_id = test_id;
     }
 
-    public Set<AnswersDataSet> getAnswers_id() {
+    public List<AnswersDataSet> getAnswers_id() {
         return answers_id;
     }
 
-    public void setAnswers_id(Set<AnswersDataSet> answers_id) {
+    public void setAnswers_id(List<AnswersDataSet> answers_id) {
         this.answers_id = answers_id;
     }
 }

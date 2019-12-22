@@ -1,10 +1,7 @@
 package DataSets;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "Tests")
@@ -37,10 +34,10 @@ public class TestsDataSet {
     private String about_test;
 
     @OneToMany(mappedBy = "test_id", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<MarksDataSet> marks_id;
+    private List<MarksDataSet> marks_id = new ArrayList<>();
 
     @OneToMany(mappedBy = "test_id", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<QuestionsDataSet> questions_id;
+    private List<QuestionsDataSet> questions_id = new ArrayList<>();
 
     @ManyToMany(cascade = {
             CascadeType.PERSIST,
@@ -48,10 +45,10 @@ public class TestsDataSet {
     })
     @JoinTable(name = "test_student", joinColumns = @JoinColumn(name = "test_id"),
             inverseJoinColumns = @JoinColumn(name = "student_id"))
-    private Set<StudentsDataSet> student_id = new HashSet<>();
+    private List<StudentsDataSet> student_id = new ArrayList<>();
 
     @OneToMany(mappedBy = "test_id", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<AnswersDataSet> answers_id;
+    private List<AnswersDataSet> answers_id = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "teacher_id")
@@ -60,7 +57,7 @@ public class TestsDataSet {
     @ManyToMany
     @JoinTable(name = "test_group", joinColumns = @JoinColumn(name = "test_id"),
             inverseJoinColumns = @JoinColumn(name = "group_id"))
-    private Set<GroupsDataSet> group_id = new HashSet<>();
+    private List<GroupsDataSet> group_id = new ArrayList<>();
 
     public TestsDataSet(){
     }
@@ -72,18 +69,18 @@ public class TestsDataSet {
         this.test_type = test_type;
         this.attempts = attempts;
         this.about_test = about_test;
-        this.answers_id = new HashSet<>();
-        this.marks_id = new HashSet<>();
-        this.questions_id = new HashSet<>();
+        this.answers_id = new ArrayList<>();
+        this.marks_id = new ArrayList<>();
+        this.questions_id = new ArrayList<>();
     }
 
     public TestsDataSet(String name, String creation_time, boolean test_type) {
         this.name = name;
         this.creation_time = creation_time;
         this.test_type = test_type;
-        this.answers_id = new HashSet<>();
-        this.marks_id = new HashSet<>();
-        this.questions_id = new HashSet<>();
+        this.answers_id = new ArrayList<>();
+        this.marks_id = new ArrayList<>();
+        this.questions_id = new ArrayList<>();
     }
 
     public int getId() {
@@ -158,38 +155,45 @@ public class TestsDataSet {
                 '}';
     }
 
-    public Set<MarksDataSet> getMarks_id() {
+    public List<MarksDataSet> getMarks_id() {
         return marks_id;
     }
 
-    public void setMarks_id(Set<MarksDataSet> marks_id) {
+    public void setMarks_id(List<MarksDataSet> marks_id) {
         this.marks_id = marks_id;
     }
 
-    public Set<QuestionsDataSet> getQuestions_id() {
+    public List<QuestionsDataSet> getQuestions_id() {
         return questions_id;
     }
 
-    public void setQuestions_id(Set<QuestionsDataSet> questions_id) {
+    public void setQuestions_id(List<QuestionsDataSet> questions_id) {
         this.questions_id = questions_id;
     }
 
-    public Set<AnswersDataSet> getAnswers_id() {
+    public List<StudentsDataSet> getStudent_id() {
+        return student_id;
+    }
+
+    public void setStudent_id(List<StudentsDataSet> student_id) {
+        this.student_id = student_id;
+    }
+
+    public List<AnswersDataSet> getAnswers_id() {
         return answers_id;
     }
 
-    public void setAnswers_id(Set<AnswersDataSet> answers_id) {
+    public void setAnswers_id(List<AnswersDataSet> answers_id) {
         this.answers_id = answers_id;
     }
 
-    public Set<GroupsDataSet> getGroup_id() {
+    public List<GroupsDataSet> getGroup_id() {
         return group_id;
     }
 
-    public void setGroup_id(Set<GroupsDataSet> group_id) {
+    public void setGroup_id(List<GroupsDataSet> group_id) {
         this.group_id = group_id;
     }
-
 
     public TeachersDataSet getTeacher_id() {
         return teacher_id;
@@ -197,14 +201,6 @@ public class TestsDataSet {
 
     public void setTeacher_id(TeachersDataSet teacher_id) {
         this.teacher_id = teacher_id;
-    }
-
-    public Set<StudentsDataSet> getStudent_id() {
-        return student_id;
-    }
-
-    public void setStudent_id(Set<StudentsDataSet> student_id) {
-        this.student_id = student_id;
     }
 
     public boolean isTest_type() {

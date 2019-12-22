@@ -43,7 +43,7 @@ public class LogInServlet extends HttpServlet {
                 StudentsDataSet student = stud_service.getCurUserByLogin(login_and_password.getSingin_email());
                 if (student.getPassword().equals(login_and_password.getSingin_password())) {
                     List<TestsDataSet> cur_tests = test_service.getAllPublicTests();
-                    Set<GroupsDataSet> curGroups = student.getGroups_id();
+                    List<GroupsDataSet> curGroups = student.getGroups_id();
                     for (GroupsDataSet group : curGroups) {
                         cur_tests.addAll(group.getTest_id());
                     }
@@ -53,11 +53,11 @@ public class LogInServlet extends HttpServlet {
                         }
                     }
                     ServletOutputStream out = resp.getOutputStream();
-                    out.write(gson.toJson("student").getBytes());
-                    out.write(gson.toJson("allowed tests:").getBytes());
-                    out.write(gson.toJson(cur_tests).getBytes());
-                    out.write(gson.toJson("passed tests:").getBytes());
-                    out.write(gson.toJson(student.getPassedTests_id()).getBytes());
+                    //out.write(gson.toJson("student").getBytes());
+                    //out.write(gson.toJson("allowed tests:").getBytes());
+                    //out.write(gson.toJson(cur_tests).getBytes());
+                    //out.write(gson.toJson("passed tests:").getBytes());
+                    //out.write(gson.toJson(student.getPassedTests_id()).getBytes());
                     out.flush();
                     out.close();
                 }

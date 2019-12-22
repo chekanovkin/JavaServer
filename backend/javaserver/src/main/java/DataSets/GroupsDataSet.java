@@ -1,7 +1,9 @@
 package DataSets;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -22,7 +24,7 @@ public class GroupsDataSet {
     })
     @JoinTable(name = "students_group", joinColumns = @JoinColumn(name = "group_id"),
             inverseJoinColumns = @JoinColumn(name = "student_id"))
-    private Set<StudentsDataSet> student_id = new HashSet<>();
+    private List<StudentsDataSet> student_id = new ArrayList<>();
 
     @ManyToMany(cascade = {
             CascadeType.PERSIST,
@@ -30,7 +32,7 @@ public class GroupsDataSet {
     })
     @JoinTable(name = "test_group", joinColumns = @JoinColumn(name = "group_id"),
             inverseJoinColumns = @JoinColumn(name = "test_id"))
-    private Set<TestsDataSet> test_id = new HashSet<>();
+    private List<TestsDataSet> test_id = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "teacher_id")
@@ -67,19 +69,19 @@ public class GroupsDataSet {
         this.teacher_id = teacher_id;
     }
 
-    public Set<StudentsDataSet> getStudent_id() {
+    public List<StudentsDataSet> getStudent_id() {
         return student_id;
     }
 
-    public void setStudent_id(Set<StudentsDataSet> student_id) {
+    public void setStudent_id(List<StudentsDataSet> student_id) {
         this.student_id = student_id;
     }
 
-    public Set<TestsDataSet> getTest_id() {
+    public List<TestsDataSet> getTest_id() {
         return test_id;
     }
 
-    public void setTest_id(Set<TestsDataSet> test_id) {
+    public void setTest_id(List<TestsDataSet> test_id) {
         this.test_id = test_id;
     }
 }
