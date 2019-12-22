@@ -1,7 +1,9 @@
 package DataSets;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -44,8 +46,8 @@ public class StudentsDataSet {
             inverseJoinColumns = @JoinColumn(name = "mark_id"))
     private Set<MarksDataSet> mark_id = new HashSet<>();
 
-    @OneToOne(fetch = FetchType.EAGER,mappedBy = "student_id")
-    private AnswersDataSet answer_id;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "student_id", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<AnswersDataSet> answer_id = new ArrayList<>();
 
     @ManyToMany(fetch = FetchType.EAGER,cascade = {
             CascadeType.PERSIST,
@@ -178,11 +180,14 @@ public class StudentsDataSet {
         return passedTests_id;
     }
 
-    public void setPassedTests_id(Set<TestsDataSet> passedTests_id) {
-        this.passedTests_id = passedTests_id;
+    public void setPassedTests_id(Set<TestsDataSet> passedTests) {
+        for(TestsDataSet test : passedTests){
+            addPassedTests(test);
+        }
     }
 
     public void addPassedTests(TestsDataSet test){
+        test.addStudent(this);
         passedTests_id.add(test);
     }
 
@@ -194,11 +199,18 @@ public class StudentsDataSet {
         this.groups_id = groups_id;
     }
 
-    public AnswersDataSet getAnswer_id() {
+    public List<AnswersDataSet> getAnswer_id() {
         return answer_id;
     }
 
-    public void setAnswer_id(AnswersDataSet answer_id) {
-        this.answer_id = answer_id;
+    public void addAnswer(AnswersDataSet answer) {
+        answer.setStudent_id(this);
+        answer_id.add(answer);
+    }
+
+    public void setAnswer_id(List<AnswersDataSet> answers){
+        for(AnswersDataSet a : answers){
+            addAnswer(a);
+        }
     }
 }

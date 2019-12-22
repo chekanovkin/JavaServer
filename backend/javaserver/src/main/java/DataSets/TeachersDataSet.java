@@ -1,7 +1,9 @@
 package DataSets;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -34,8 +36,12 @@ public class TeachersDataSet {
     @Column(name = "regdate")
     private String regDate;
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "teacher_id", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "teacher_id", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<GroupsDataSet> groups;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "teacher_id", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<TestsDataSet> tests;
+
 
     @Column(name = "organization", length = 50)
     private String organization;
@@ -53,6 +59,7 @@ public class TeachersDataSet {
         this.organization = organization;
         groups = new HashSet<>();
         this.role = role;
+        tests = new ArrayList<>();
     }
 
     public TeachersDataSet(String name, String surname, String email, String password, String regDate, String role) {
@@ -63,10 +70,25 @@ public class TeachersDataSet {
         this.regDate = regDate;
         groups = new HashSet<>();
         this.role = role;
+        tests = new ArrayList<>();
+    }
+
+    public void addTest(TestsDataSet test){
+        test.setTeacher_id(this);
+        tests.add(test);
+    }
+
+    public void removeTest(TestsDataSet test){
+        tests.remove(test);
     }
 
     public void addGroup(GroupsDataSet group){
+        group.setTeacher_id(this);
         groups.add(group);
+    }
+
+    public void removeGroup(GroupsDataSet group){
+        groups.remove(group);
     }
 
     public int getId() {

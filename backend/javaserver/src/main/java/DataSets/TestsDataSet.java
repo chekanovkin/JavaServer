@@ -62,19 +62,22 @@ public class TestsDataSet {
     public TestsDataSet(){
     }
 
-    public TestsDataSet(String name, int solution_time, String creation_time, boolean test_type, int attempts, String about_test) {
+    public TestsDataSet(String name, int solution_time, String creation_time, boolean test_type, int attempts,
+                        String about_test, QuestionsDataSet[] questions, AnswersDataSet[] answers) {
+        ArrayList<QuestionsDataSet> questionArr = new ArrayList<>(Arrays.asList(questions));
+        ArrayList<AnswersDataSet> answersArr = new ArrayList<>(Arrays.asList(answers));
         this.name = name;
         this.solution_time = solution_time;
         this.creation_time = creation_time;
         this.test_type = test_type;
         this.attempts = attempts;
         this.about_test = about_test;
-        this.answers_id = new ArrayList<>();
+        this.answers_id.addAll(answersArr);
         this.marks_id = new ArrayList<>();
-        this.questions_id = new ArrayList<>();
+        this.questions_id.addAll(questionArr);
     }
 
-    public TestsDataSet(String name, String creation_time, boolean test_type) {
+    public TestsDataSet(String name, String creation_time, boolean test_type, String creator) {
         this.name = name;
         this.creation_time = creation_time;
         this.test_type = test_type;
@@ -160,15 +163,29 @@ public class TestsDataSet {
     }
 
     public void setMarks_id(List<MarksDataSet> marks_id) {
-        this.marks_id = marks_id;
+        for(MarksDataSet m : marks_id){
+            addMark(m);
+        }
+    }
+
+    public void addMark(MarksDataSet mark){
+        mark.setTest_id(this);
+        marks_id.add(mark);
     }
 
     public List<QuestionsDataSet> getQuestions_id() {
         return questions_id;
     }
 
-    public void setQuestions_id(List<QuestionsDataSet> questions_id) {
-        this.questions_id = questions_id;
+    public void setQuestions_id(List<QuestionsDataSet> questions) {
+        for(QuestionsDataSet q : questions){
+            addQuestion(q);
+        }
+    }
+
+    public void addQuestion(QuestionsDataSet question){
+        question.setTest_id(this);
+        questions_id.add(question);
     }
 
     public List<StudentsDataSet> getStudent_id() {
@@ -177,6 +194,10 @@ public class TestsDataSet {
 
     public void setStudent_id(List<StudentsDataSet> student_id) {
         this.student_id = student_id;
+    }
+
+    public void addStudent(StudentsDataSet student){
+        student_id.add(student);
     }
 
     public List<AnswersDataSet> getAnswers_id() {
@@ -191,8 +212,15 @@ public class TestsDataSet {
         return group_id;
     }
 
-    public void setGroup_id(List<GroupsDataSet> group_id) {
-        this.group_id = group_id;
+    public void setGroup_id(List<GroupsDataSet> group) {
+        for(GroupsDataSet g : group){
+            addGroup(g);
+        }
+    }
+
+    public void addGroup(GroupsDataSet group){
+        group.setTest_id(this);
+        group_id.add(group);
     }
 
     public TeachersDataSet getTeacher_id() {

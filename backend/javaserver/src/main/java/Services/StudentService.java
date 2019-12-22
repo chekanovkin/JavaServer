@@ -13,7 +13,7 @@ import org.hibernate.service.ServiceRegistry;
 import javax.transaction.Transactional;
 import java.util.List;
 
-public class StudentService implements UserService_Interface{
+public class StudentService implements UserService_Interface {
 
     private final SessionFactory sessionFactory;
     private static final String hibernate_show_sql = "true";
@@ -64,7 +64,7 @@ public class StudentService implements UserService_Interface{
     }
 
     @Transactional
-    public StudentsDataSet getCurUserByLogin(String login) throws Exception{
+    public StudentsDataSet getCurUserByLogin(String login) throws Exception {
         try {
             Session session = sessionFactory.openSession();
             StudentsDAO dao = new StudentsDAO(session);
@@ -76,11 +76,23 @@ public class StudentService implements UserService_Interface{
         }
     }
 
-    public List<StudentsDataSet> getCurUserByFIO(String name, String surname, String patronymic) throws Exception{
+    public List<StudentsDataSet> getCurUserByFIO(String name, String surname, String patronymic) throws Exception {
         try {
             Session session = sessionFactory.openSession();
             StudentsDAO dao = new StudentsDAO(session);
             List<StudentsDataSet> student = dao.getStudentsByFIO(name, surname, patronymic);
+            session.close();
+            return student;
+        } catch (HibernateException e) {
+            throw new Exception(e);
+        }
+    }
+
+    public StudentsDataSet getCurUserById(int id) throws Exception {
+        try {
+            Session session = sessionFactory.openSession();
+            StudentsDAO dao = new StudentsDAO(session);
+            StudentsDataSet student = dao.get(id);
             session.close();
             return student;
         } catch (HibernateException e) {

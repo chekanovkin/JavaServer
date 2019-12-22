@@ -11,6 +11,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class TestService {
@@ -50,12 +51,25 @@ public class TestService {
         return configuration.buildSessionFactory(serviceRegistry);
     }
 
-    public void addTest(String name, String creation_time, boolean test_type) throws Exception {
+    public void addTest(String name, String creation_time, boolean test_type, String creator) throws Exception {
         try {
             Session session = sessionFactory.openSession();
             Transaction transaction = session.beginTransaction();
             TestsDAO dao = new TestsDAO(session);
-            dao.insertTest(name, creation_time, test_type);
+            dao.insertTest(name, creation_time, test_type, creator);
+            transaction.commit();
+            session.close();
+        } catch (HibernateException e) {
+            throw new Exception(e);
+        }
+    }
+
+    public void addFullTest(TestsDataSet test) throws Exception {
+        try {
+            Session session = sessionFactory.openSession();
+            Transaction transaction = session.beginTransaction();
+            TestsDAO dao = new TestsDAO(session);
+            dao.insertFullTest(test);
             transaction.commit();
             session.close();
         } catch (HibernateException e) {

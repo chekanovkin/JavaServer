@@ -46,6 +46,10 @@ public class AnswersDataSet {
         this.isRight = right;
     }
 
+    public AnswersDataSet(String answer_text) {
+        this.answer_text = answer_text;
+    }
+
     public int getId() {
         return id;
     }

@@ -32,7 +32,6 @@ public class MarksDataSet {
     public MarksDataSet(){}
 
     public MarksDataSet(String mark){
-        this.setId(-1);
         this.mark = mark;
     }
 
@@ -64,7 +63,13 @@ public class MarksDataSet {
         return student_id;
     }
 
-    public void setStudent_id(List<StudentsDataSet> student_id) {
-        this.student_id = student_id;
+    public void setStudent_id(List<StudentsDataSet> student) {
+        for(StudentsDataSet s : student){
+            addStudent(s);
+        }
+    }
+
+    public void addStudent(StudentsDataSet student){
+        student_id.add(student);
     }
 }

@@ -87,7 +87,14 @@ public class QuestionsDataSet {
         return answers_id;
     }
 
-    public void setAnswers_id(List<AnswersDataSet> answers_id) {
-        this.answers_id = answers_id;
+    public void setAnswers_id(List<AnswersDataSet> answers) {
+        for(AnswersDataSet a : answers){
+            addAnswer(a);
+        }
+    }
+
+    public void addAnswer(AnswersDataSet answer){
+        answer.setQuestion_id(this);
+        answers_id.add(answer);
     }
 }

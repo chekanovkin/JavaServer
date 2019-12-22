@@ -81,7 +81,7 @@ public class GroupsDataSet {
         return test_id;
     }
 
-    public void setTest_id(List<TestsDataSet> test_id) {
-        this.test_id = test_id;
+    public void setTest_id(TestsDataSet test) {
+        test_id.add(test);
     }
 }

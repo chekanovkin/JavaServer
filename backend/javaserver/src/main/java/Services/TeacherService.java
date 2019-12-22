@@ -86,4 +86,16 @@ public class TeacherService implements UserService_Interface{
             throw new Exception(e);
         }
     }
+
+    public TeachersDataSet getCurUserById(int id) throws Exception {
+        try {
+            Session session = sessionFactory.openSession();
+            TeachersDAO dao = new TeachersDAO(session);
+            TeachersDataSet teacher = dao.get(id);
+            session.close();
+            return teacher;
+        } catch (HibernateException e) {
+            throw new Exception(e);
+        }
+    }
 }

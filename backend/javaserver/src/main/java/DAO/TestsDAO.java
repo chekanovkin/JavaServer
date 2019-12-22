@@ -1,16 +1,13 @@
 package DAO;
 
-import DataSets.GroupsDataSet;
-import DataSets.TestsDataSet;
+import DataSets.*;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
 import javax.persistence.NoResultException;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.CriteriaUpdate;
-import javax.persistence.criteria.Root;
+import javax.persistence.criteria.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TestsDAO {
@@ -35,6 +32,25 @@ public class TestsDAO {
         Query<TestsDataSet> query = session.createQuery(cq);
         try{
             tests = query.getResultList();
+        }catch (NoResultException ex){
+            System.out.println("Тестов от этого учителя не найдено");
+            return null;
+        }
+        return tests;
+    }
+
+    public TestsDataSet getTestByNameAndTeacher(String name, int teacher_id) throws HibernateException {
+        CriteriaBuilder cb = session.getCriteriaBuilder();
+        CriteriaQuery<TestsDataSet> cq = cb.createQuery(TestsDataSet.class);
+        Root<TestsDataSet> root = cq.from(TestsDataSet.class);
+        Predicate[] predicates = new Predicate[2];
+        predicates[0] = cb.equal(root.get("name"), name);
+        predicates[1] = cb.equal(root.get("teacher_id"), teacher_id);
+        cq.select(root).where(predicates);
+        TestsDataSet tests;
+        Query<TestsDataSet> query = session.createQuery(cq);
+        try{
+            tests = query.getSingleResult();
         }catch (NoResultException ex){
             System.out.println("Тестов от этого учителя не найдено");
             return null;
@@ -104,7 +120,11 @@ public class TestsDAO {
     }
 
 
-    public void insertTest(String name, String creation_time, boolean test_type) throws HibernateException {
-        session.save(new TestsDataSet(name, creation_time, test_type));
+    public void insertTest(String name, String creation_time, boolean test_type, String creator) throws HibernateException {
+        session.save(new TestsDataSet(name, creation_time, test_type, creator));
+    }
+
+    public void insertFullTest(TestsDataSet test) throws HibernateException {
+        session.save(test);
     }
 }
