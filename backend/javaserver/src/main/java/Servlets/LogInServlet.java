@@ -77,9 +77,9 @@ public class LogInServlet extends HttpServlet {
                     ServletOutputStream out = resp.getOutputStream();
                     responsejson.put("status","OK");
                     responsejson.put("role","teacher");
-                    responsejson.put("deprecated_tests",gson.toJson(gson.toJson(deprecatedTests)));
-                    responsejson.put("actual_tests",gson.toJson(gson.toJson(actualTests)));
-                    responsejson.put("amount_of_groups",gson.toJson(gson.toJson(teacher.getGroups())));
+                    responsejson.put("deprecated_tests",gson.toJson(deprecatedTests));
+                    responsejson.put("actual_tests",gson.toJson(actualTests));
+                    responsejson.put("amount_of_groups",gson.toJson(teacher.getGroups()));
                     out.write(gson.toJson(responsejson).getBytes());
                     out.flush();
                     out.close();

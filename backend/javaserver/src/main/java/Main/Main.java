@@ -14,6 +14,9 @@ import org.apache.catalina.webresources.StandardRoot;
 
 public class Main {
 
+    public final static String TARGET_PATH = "mainrep2/backend/javaserver/target";
+    public final static String WEBINF_PATH = "/WEB-INF/classes";
+
     //TODO@ Проверка загрузки
     public static void main(String[] args) throws Exception{
         Tomcat tomcat = new Tomcat();
@@ -24,9 +27,9 @@ public class Main {
         Tomcat.addServlet(ctx, "MyServlet", new TestServlet());
         Tomcat.addServlet(ctx, "RegServlet", new RegistrationServlet());
         Tomcat.addServlet(ctx, "LogInServlet", new LogInServlet());
-        File additionWebInfClasses = new File("backend/javaserver/target");
+        File additionWebInfClasses = new File(TARGET_PATH);
         WebResourceRoot resources = new StandardRoot(ctx);
-        resources.addPreResources(new DirResourceSet(resources, "/WEB-INF/classes",
+        resources.addPreResources(new DirResourceSet(resources, WEBINF_PATH,
                 additionWebInfClasses.getAbsolutePath(), "/"));
         ctx.setResources(resources);
 

@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0bb64434-99e9-410e-86c7-e41418c63100" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/TeachersDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/DataSets/TeachersDataSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/LogInServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/LogInServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/TeachersDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/DataSets/TeachersDataSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/Services/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/Services/StudentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/javaserver/target/classes/Servlets/RegistrationServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaserver/target/classes/Servlets/RegistrationServlet.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +48,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../teoriya_avtomatov" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../5sem/KSPlabs/Lab45" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -117,6 +112,17 @@
       <option name="presentableId" value="Default" />
       <updated>1570032363854</updated>
       <workItem from="1573413871475" duration="1692000" />
+      <workItem from="1575279522060" duration="8000" />
+      <workItem from="1575640025146" duration="2313000" />
+      <workItem from="1575664648693" duration="595000" />
+      <workItem from="1575829194673" duration="870000" />
+      <workItem from="1575833524063" duration="1972000" />
+      <workItem from="1575870652957" duration="615000" />
+      <workItem from="1575930771183" duration="689000" />
+      <workItem from="1575990984776" duration="30000" />
+      <workItem from="1576092587808" duration="7395000" />
+      <workItem from="1576237371795" duration="15183000" />
+      <workItem from="1576333609391" duration="625000" />
     </task>
     <task id="LOCAL-00001" summary="Тестовое подключение к локалхосту">
       <created>1570035373394</created>
@@ -216,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575208511276</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Косметические изменения">
+      <created>1575212216118</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1575212216118</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,17 +285,7 @@
     <MESSAGE value="Единый сервлет входа в лк" />
     <MESSAGE value="Исправлен сервлет логина, теперь отображает кто логинится" />
     <MESSAGE value="Стандартизирована отправка и приём ответов при помози JSON" />
-    <option name="LAST_COMMIT_MESSAGE" value="Стандартизирована отправка и приём ответов при помози JSON" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/javaserver/src/main/java/Servlets/LogInServlet.java</url>
-          <line>79</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Косметические изменения" />
+    <option name="LAST_COMMIT_MESSAGE" value="Косметические изменения" />
   </component>
 </project>

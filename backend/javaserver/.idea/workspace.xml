@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bb64434-99e9-410e-86c7-e41418c63100" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/LogInServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/LogInServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/TeachersDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/TeachersDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/TestsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/TestsDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DataSets/GroupsDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataSets/GroupsDataSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DataSets/StudentsDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataSets/StudentsDataSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DataSets/TeachersDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataSets/TeachersDataSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DataSets/TestsDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataSets/TestsDataSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Services/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Services/StudentService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Servlets/RegistrationServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/RegistrationServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Servlets/TestServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Servlets/TestServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -121,6 +134,8 @@
       <workItem from="1573573313200" duration="5072000" />
       <workItem from="1573584125519" duration="1316000" />
       <workItem from="1574197905325" duration="601000" />
+      <workItem from="1576953997078" duration="4241000" />
+      <workItem from="1577000907776" duration="2638000" />
     </task>
     <task id="LOCAL-00001" summary="Тестовое подключение к локалхосту">
       <created>1570035373394</created>
