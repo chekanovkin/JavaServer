@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 
 @WebServlet(
@@ -38,7 +39,7 @@ public class CompletedTestServlet extends HttpServlet {
         String testId = req.getHeader("test_id");
         String studentId = req.getHeader("student_id");
         AnswersDataSet[] answers = gson.fromJson(req.getHeader("answers"), AnswersDataSet[].class);
-        ArrayList<AnswersDataSet> answerList = new ArrayList<>(Arrays.asList(answers));
+        HashSet<AnswersDataSet> answerList = new HashSet<>(Arrays.asList(answers));
         try{
             int numberOfRightAnswers = 0;
             TestsDataSet test = test_service.getTestById(Integer.getInteger(testId));
@@ -54,7 +55,7 @@ public class CompletedTestServlet extends HttpServlet {
             int markInpercent = numberOfRightAnswers/answerList.size();
             mark.setMark(markInpercent + "%");
             student.addPassedTests(test);
-            student.setAnswer_id(Arrays.asList(answers));
+            student.setAnswer_id(answerList);
             responsejson.put("status", "OK");
         } catch (Exception e){
             e.printStackTrace();

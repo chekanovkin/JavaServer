@@ -1,5 +1,7 @@
 package DataSets;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -16,31 +18,40 @@ public class TeachersDataSet {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
+    @JsonProperty("id")
     private int id;
 
     @Column(name = "name", nullable = false, length = 35)
+    @JsonProperty("name")
     private String name;
 
     @Column(name = "surname", nullable = false, length = 40)
+    @JsonProperty("surname")
     private String surname;
 
     @Column(name = "patronymic")
+    @JsonProperty("patronymic")
     private String patronymic;
 
     @Column(name = "email", updatable = false, unique = true, nullable = false, length = 50)
+    @JsonProperty("email")
     private String email;
 
     @Column(name = "password", nullable = false, length = 50)
+    @JsonProperty("password")
     private String password;
 
     @Column(name = "regdate")
+    @JsonProperty("regdate")
     private String regDate;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "teacher_id", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<GroupsDataSet> groups;
+    @JsonProperty("groups")
+    private Set<GroupsDataSet> groups = new HashSet<>();
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "teacher_id", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<TestsDataSet> tests;
+    @JsonProperty("tests")
+    private Set<TestsDataSet> tests = new HashSet<>();
 
 
     @Column(name = "organization", length = 50)
@@ -59,7 +70,7 @@ public class TeachersDataSet {
         this.organization = organization;
         groups = new HashSet<>();
         this.role = role;
-        tests = new ArrayList<>();
+        tests = new HashSet<>();
     }
 
     public TeachersDataSet(String name, String surname, String email, String password, String regDate, String role) {
@@ -70,7 +81,7 @@ public class TeachersDataSet {
         this.regDate = regDate;
         groups = new HashSet<>();
         this.role = role;
-        tests = new ArrayList<>();
+        tests = new HashSet<>();
     }
 
     public void addTest(TestsDataSet test){

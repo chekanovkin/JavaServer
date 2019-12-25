@@ -1,6 +1,8 @@
 package DAO;
 
 import DataSets.AnswersDataSet;
+import DataSets.TestsDataSet;
+import Services.AnswerService;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -70,5 +72,9 @@ public class AnswersDAO {
 
     public void insertAnswer(String answer_text, boolean right) throws HibernateException {
         session.save(new AnswersDataSet(answer_text, right));
+    }
+
+    public void insertFullAnswer(AnswersDataSet answer) throws HibernateException {
+        session.save(answer);
     }
 }

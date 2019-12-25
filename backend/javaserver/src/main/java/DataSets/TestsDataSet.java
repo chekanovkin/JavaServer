@@ -1,5 +1,10 @@
 package DataSets;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.util.*;
 
@@ -10,62 +15,76 @@ public class TestsDataSet {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
+    @JsonProperty("id")
     private int id;
 
     @Column(name = "name", nullable = false, length = 50)
+    @JsonProperty("name")
     private String name;
 
     @Column(name = "solution_time")
+    @JsonProperty("solution_time")
     private int solution_time;                                          //пока пусть будет в минутах
 
     @Column(name = "creation_time", nullable = false)
+    @JsonProperty("creation_time")
     private String creation_time;
 
     @Column(name = "test_type", nullable = false, length = 50)
+    @JsonProperty("test_type")
     private boolean test_type;                                           // может и не boolean (открытый и закрытый)
 
     @Column(name = "attempts")
+    @JsonProperty("attempts")
     private int attempts;
 
     @Column(name = "deprecated")
+    @JsonProperty("deprecated")
     private boolean deprecated;
 
     @Column(name = "about_test", length = 254)
+    @JsonProperty("about_test")
     private String about_test;
 
-    @OneToMany(mappedBy = "test_id", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<MarksDataSet> marks_id = new ArrayList<>();
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "test_id", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonProperty("marks_id")
+    private Set<MarksDataSet> marks_id = new HashSet<>();
 
-    @OneToMany(mappedBy = "test_id", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<QuestionsDataSet> questions_id = new ArrayList<>();
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "test_id", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonProperty("questions_id")
+    private Set<QuestionsDataSet> questions_id = new HashSet<>();
 
-    @ManyToMany(cascade = {
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
     })
     @JoinTable(name = "test_student", joinColumns = @JoinColumn(name = "test_id"),
             inverseJoinColumns = @JoinColumn(name = "student_id"))
-    private List<StudentsDataSet> student_id = new ArrayList<>();
+    @JsonProperty("student_id")
+    private Set<StudentsDataSet> student_id = new HashSet<>();
 
-    @OneToMany(mappedBy = "test_id", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<AnswersDataSet> answers_id = new ArrayList<>();
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "test_id", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonProperty("answers_id")
+    private Set<AnswersDataSet> answers_id = new HashSet<>();
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "teacher_id")
+    @JsonIgnore
     private TeachersDataSet teacher_id;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "test_group", joinColumns = @JoinColumn(name = "test_id"),
             inverseJoinColumns = @JoinColumn(name = "group_id"))
-    private List<GroupsDataSet> group_id = new ArrayList<>();
+    @JsonProperty("group_id")
+    private Set<GroupsDataSet> group_id = new HashSet<>();
 
     public TestsDataSet(){
     }
 
     public TestsDataSet(String name, int solution_time, String creation_time, boolean test_type, int attempts,
                         String about_test, QuestionsDataSet[] questions, AnswersDataSet[] answers) {
-        ArrayList<QuestionsDataSet> questionArr = new ArrayList<>(Arrays.asList(questions));
-        ArrayList<AnswersDataSet> answersArr = new ArrayList<>(Arrays.asList(answers));
+        Set<QuestionsDataSet> questionArr = new HashSet<>(Arrays.asList(questions));
+        Set<AnswersDataSet> answersArr = new HashSet<>(Arrays.asList(answers));
         this.name = name;
         this.solution_time = solution_time;
         this.creation_time = creation_time;
@@ -73,7 +92,7 @@ public class TestsDataSet {
         this.attempts = attempts;
         this.about_test = about_test;
         this.answers_id.addAll(answersArr);
-        this.marks_id = new ArrayList<>();
+        this.marks_id = new HashSet<>();
         this.questions_id.addAll(questionArr);
     }
 
@@ -81,9 +100,9 @@ public class TestsDataSet {
         this.name = name;
         this.creation_time = creation_time;
         this.test_type = test_type;
-        this.answers_id = new ArrayList<>();
-        this.marks_id = new ArrayList<>();
-        this.questions_id = new ArrayList<>();
+        this.answers_id = new HashSet<>();
+        this.marks_id = new HashSet<>();
+        this.questions_id = new HashSet<>();
     }
 
     public int getId() {
@@ -158,7 +177,7 @@ public class TestsDataSet {
                 '}';
     }
 
-    public List<MarksDataSet> getMarks_id() {
+    public Set<MarksDataSet> getMarks_id() {
         return marks_id;
     }
 
@@ -173,7 +192,7 @@ public class TestsDataSet {
         marks_id.add(mark);
     }
 
-    public List<QuestionsDataSet> getQuestions_id() {
+    public Set<QuestionsDataSet> getQuestions_id() {
         return questions_id;
     }
 
@@ -188,11 +207,11 @@ public class TestsDataSet {
         questions_id.add(question);
     }
 
-    public List<StudentsDataSet> getStudent_id() {
+    public Set<StudentsDataSet> getStudent_id() {
         return student_id;
     }
 
-    public void setStudent_id(List<StudentsDataSet> student_id) {
+    public void setStudent_id(Set<StudentsDataSet> student_id) {
         this.student_id = student_id;
     }
 
@@ -200,19 +219,19 @@ public class TestsDataSet {
         student_id.add(student);
     }
 
-    public List<AnswersDataSet> getAnswers_id() {
+    public Set<AnswersDataSet> getAnswers_id() {
         return answers_id;
     }
 
-    public void setAnswers_id(List<AnswersDataSet> answers_id) {
+    public void setAnswers_id(Set<AnswersDataSet> answers_id) {
         this.answers_id = answers_id;
     }
 
-    public List<GroupsDataSet> getGroup_id() {
+    public Set<GroupsDataSet> getGroup_id() {
         return group_id;
     }
 
-    public void setGroup_id(List<GroupsDataSet> group) {
+    public void setGroup_id(Set<GroupsDataSet> group) {
         for(GroupsDataSet g : group){
             addGroup(g);
         }

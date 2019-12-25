@@ -1,5 +1,7 @@
 package DataSets;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -13,29 +15,34 @@ public class GroupsDataSet {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
+    @JsonProperty("id")
     private int id;
 
     @Column(name = "name", nullable = false, length = 35)
+    @JsonProperty("name")
     private String name;
 
-    @ManyToMany(cascade = {
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
     })
     @JoinTable(name = "students_group", joinColumns = @JoinColumn(name = "group_id"),
             inverseJoinColumns = @JoinColumn(name = "student_id"))
-    private List<StudentsDataSet> student_id = new ArrayList<>();
+    @JsonProperty("student_id")
+    private Set<StudentsDataSet> student_id = new HashSet<>();
 
-    @ManyToMany(cascade = {
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
     })
     @JoinTable(name = "test_group", joinColumns = @JoinColumn(name = "group_id"),
             inverseJoinColumns = @JoinColumn(name = "test_id"))
-    private List<TestsDataSet> test_id = new ArrayList<>();
+    @JsonProperty("test_id")
+    private Set<TestsDataSet> test_id = new HashSet<>();
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "teacher_id")
+    @JsonProperty("teacher_id")
     private TeachersDataSet teacher_id;
 
     public GroupsDataSet() {
@@ -69,15 +76,15 @@ public class GroupsDataSet {
         this.teacher_id = teacher_id;
     }
 
-    public List<StudentsDataSet> getStudent_id() {
+    public Set<StudentsDataSet> getStudent_id() {
         return student_id;
     }
 
-    public void setStudent_id(List<StudentsDataSet> student_id) {
+    public void setStudent_id(Set<StudentsDataSet> student_id) {
         this.student_id = student_id;
     }
 
-    public List<TestsDataSet> getTest_id() {
+    public Set<TestsDataSet> getTest_id() {
         return test_id;
     }
 

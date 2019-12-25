@@ -1,5 +1,7 @@
 package DataSets;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -15,27 +17,35 @@ public class StudentsDataSet {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
+    @JsonProperty("id")
     private int id;
 
     @Column(name = "name", nullable = false, length = 35)
+    @JsonProperty("name")
     private String name;
 
     @Column(name = "surname", nullable = false, length = 40)
+    @JsonProperty("surname")
     private String surname;
 
     @Column(name = "patronymic")
+    @JsonProperty("patronymic")
     private String patronymic;
 
     @Column(name = "email", updatable = false, unique = true, nullable = false, length = 50)
+    @JsonProperty("email")
     private String email;
 
     @Column(name = "password", nullable = false, length = 50)
+    @JsonProperty("password")
     private String password;
 
     @Column(name = "regdate")
+    @JsonProperty("regdate")
     private String regDate;
 
     @Column(name = "organization", length = 50)
+    @JsonProperty("organization")
     private String organization;
 
     @ManyToMany(fetch = FetchType.EAGER,cascade = {
@@ -44,10 +54,12 @@ public class StudentsDataSet {
     })
     @JoinTable(name = "mark_student", joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "mark_id"))
+    @JsonProperty("mark_id")
     private Set<MarksDataSet> mark_id = new HashSet<>();
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "student_id", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<AnswersDataSet> answer_id = new ArrayList<>();
+    @JsonProperty("answer_id")
+    private Set<AnswersDataSet> answer_id = new HashSet<>();
 
     @ManyToMany(fetch = FetchType.EAGER,cascade = {
             CascadeType.PERSIST,
@@ -55,6 +67,7 @@ public class StudentsDataSet {
     })
     @JoinTable(name = "test_student", joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "test_id"))
+    @JsonProperty("passedTests_id")
     private Set<TestsDataSet> passedTests_id = new HashSet<>();
 
     @ManyToMany(fetch = FetchType.EAGER,cascade = {
@@ -63,6 +76,7 @@ public class StudentsDataSet {
     })
     @JoinTable(name = "students_groups", joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "group_id"))
+    @JsonProperty("groups_id")
     private Set<GroupsDataSet> groups_id = new HashSet<>();
 
     public StudentsDataSet(){
@@ -199,7 +213,7 @@ public class StudentsDataSet {
         this.groups_id = groups_id;
     }
 
-    public List<AnswersDataSet> getAnswer_id() {
+    public Set<AnswersDataSet> getAnswer_id() {
         return answer_id;
     }
 
@@ -208,7 +222,7 @@ public class StudentsDataSet {
         answer_id.add(answer);
     }
 
-    public void setAnswer_id(List<AnswersDataSet> answers){
+    public void setAnswer_id(Set<AnswersDataSet> answers){
         for(AnswersDataSet a : answers){
             addAnswer(a);
         }

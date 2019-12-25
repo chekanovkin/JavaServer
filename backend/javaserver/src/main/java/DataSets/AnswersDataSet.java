@@ -1,5 +1,8 @@
 package DataSets;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,27 +12,34 @@ public class AnswersDataSet {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
+    @JsonProperty("id")
     private int id;
 
     @Column(name = "answer_text", nullable = false, length = 255)
+    @JsonProperty("answer_text")
     private String answer_text;
 
     @Column(name = "teacher_comment", length = 255)
+    @JsonProperty("teacher_comment")
     private String teacher_comment;
 
     @Column(name = "isRight", nullable = false)
+    @JsonProperty("isRight")
     private boolean isRight;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "test_id")
+    @JsonIgnore
     private TestsDataSet test_id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "question_id")
+    @JsonIgnore
     private QuestionsDataSet question_id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="student_id")
+    @JsonIgnore
     private StudentsDataSet student_id;
 
     public AnswersDataSet() {

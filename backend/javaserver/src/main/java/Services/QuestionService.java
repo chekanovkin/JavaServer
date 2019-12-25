@@ -1,6 +1,8 @@
 package Services;
 
-import DAO.GroupsDAO;
+import DAO.MarksDAO;
+import DAO.QuestionsDAO;
+import DAO.TestsDAO;
 import DataSets.*;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -10,15 +12,13 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-import java.util.List;
-
-public class GroupService {
+public class QuestionService {
 
     private final SessionFactory sessionFactory;
     private static final String hibernate_show_sql = "true";
     private static final String hibernate_hbm2ddl_auto = "update";
 
-    public GroupService(){
+    public QuestionService() {
         Configuration configuration = getPostgreConfiguration();
         sessionFactory = createSessionFactory(configuration);
     }
@@ -49,12 +49,12 @@ public class GroupService {
         return configuration.buildSessionFactory(serviceRegistry);
     }
 
-    public void addGroup(String name) throws Exception {
+    public void addQuestion(String name, String type) throws Exception{
         try {
             Session session = sessionFactory.openSession();
             Transaction transaction = session.beginTransaction();
-            GroupsDAO dao = new GroupsDAO(session);
-            dao.insertGroup(name);
+            QuestionsDAO dao = new QuestionsDAO(session);
+            dao.insertQuestion(name, type);
             transaction.commit();
             session.close();
         } catch (HibernateException e) {
@@ -62,37 +62,14 @@ public class GroupService {
         }
     }
 
-    public GroupsDataSet getGroupById(long id) throws Exception{
+    public void addFullQuestion(QuestionsDataSet question) throws Exception {
         try {
             Session session = sessionFactory.openSession();
-            GroupsDAO dao = new GroupsDAO(session);
-            GroupsDataSet group = dao.get(id);
+            Transaction transaction = session.beginTransaction();
+            QuestionsDAO dao = new QuestionsDAO(session);
+            dao.insertFullQuestion(question);
+            transaction.commit();
             session.close();
-            return group;
-        } catch (HibernateException e) {
-            throw new Exception(e);
-        }
-    }
-
-    public List<GroupsDataSet> getGroupsByName(String name) throws Exception{
-        try {
-            Session session = sessionFactory.openSession();
-            GroupsDAO dao = new GroupsDAO(session);
-            List<GroupsDataSet> groups = dao.getGroupsByName(name);
-            session.close();
-            return groups;
-        } catch (HibernateException e) {
-            throw new Exception(e);
-        }
-    }
-
-    public List<GroupsDataSet> getGroupsByTeacher(long teacher_id) throws Exception{
-        try {
-            Session session = sessionFactory.openSession();
-            GroupsDAO dao = new GroupsDAO(session);
-            List<GroupsDataSet> groups = dao.getGroupsByTeacher(teacher_id);
-            session.close();
-            return groups;
         } catch (HibernateException e) {
             throw new Exception(e);
         }

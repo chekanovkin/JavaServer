@@ -1,6 +1,7 @@
 package Services;
 
 import DAO.AnswersDAO;
+import DAO.QuestionsDAO;
 import DataSets.*;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -36,7 +37,7 @@ public class AnswerService {
         configuration.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
         configuration.setProperty("hibernate.connection.url", "jdbc:postgresql://localhost:5432/postgres");
         configuration.setProperty("hibernate.connection.username", "postgres");
-        configuration.setProperty("hibernate.connection.password", "masterpassword");
+        configuration.setProperty("hibernate.connection.password", "kainen");
         configuration.setProperty("hibernate.show_sql", hibernate_show_sql);
         configuration.setProperty("hibernate.hbm2ddl.auto", hibernate_hbm2ddl_auto);
         return configuration;
@@ -104,6 +105,19 @@ public class AnswerService {
             Transaction transaction = session.beginTransaction();
             AnswersDAO dao = new AnswersDAO(session);
             dao.setTeacherComment(comment, answer_id);
+            transaction.commit();
+            session.close();
+        } catch (HibernateException e) {
+            throw new Exception(e);
+        }
+    }
+
+    public void addFullAnswer(AnswersDataSet answer) throws Exception {
+        try {
+            Session session = sessionFactory.openSession();
+            Transaction transaction = session.beginTransaction();
+            AnswersDAO dao = new AnswersDAO(session);
+            dao.insertFullAnswer(answer);
             transaction.commit();
             session.close();
         } catch (HibernateException e) {

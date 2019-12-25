@@ -18,7 +18,7 @@ public class TestsDAO {
         this.session = session;
     }
 
-    public TestsDataSet get(long id) throws HibernateException {
+    public TestsDataSet get(int id) throws HibernateException {
         return (TestsDataSet) session.get(TestsDataSet.class, id);
     }
 

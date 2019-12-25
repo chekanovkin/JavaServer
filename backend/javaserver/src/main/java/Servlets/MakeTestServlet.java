@@ -3,6 +3,7 @@ package Servlets;
 import DataSets.*;
 import Services.TeacherService;
 import Services.TestService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
 import javax.servlet.ServletException;
@@ -29,7 +30,9 @@ public class MakeTestServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Gson gson = new Gson();
         String teacherId = req.getHeader("teacher_id");
-        TestsDataSet newTest = gson.fromJson(req.getHeader("body"), TestsDataSet.class);
+        ObjectMapper mapper = new ObjectMapper();
+        TestsDataSet newTest = mapper.readValue(req.getHeader("body"), TestsDataSet.class);
+       // TestsDataSet newTest = gson.fromJson(req.getHeader("body"), TestsDataSet.class);
         if(newTest.getAnswers_id().size() == 0){
             responsejson.put("status","Error : test can't be empty");
         } else {
