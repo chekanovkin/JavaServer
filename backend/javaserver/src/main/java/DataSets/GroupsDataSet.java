@@ -26,7 +26,7 @@ public class GroupsDataSet {
             CascadeType.PERSIST,
             CascadeType.MERGE
     })
-    @JoinTable(name = "students_group", joinColumns = @JoinColumn(name = "group_id"),
+    @JoinTable(name = "students_groups", joinColumns = @JoinColumn(name = "group_id"),
             inverseJoinColumns = @JoinColumn(name = "student_id"))
     @JsonProperty("student_id")
     private Set<StudentsDataSet> student_id = new HashSet<>();
